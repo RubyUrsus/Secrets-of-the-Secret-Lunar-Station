@@ -17,12 +17,15 @@ public class UndoMovement : MonoBehaviour
     int undoCharges = 3;
     bool undoUsed;
 
+    UndoIndicator undoInd;
+
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         undoStack.Push(transform.position);
         lastUndo = undoStack.Peek();
+        undoInd = FindObjectOfType<UndoIndicator>();
     }
 
     // Update is called once per frame
@@ -50,6 +53,7 @@ public class UndoMovement : MonoBehaviour
         lastUndo = undoStack.Peek();
         transform.position = undoStack.Pop();
         undoCharges--;
+        undoInd.TriggerUndoFlash();
     }
 
     public void AddUndoCharge()
