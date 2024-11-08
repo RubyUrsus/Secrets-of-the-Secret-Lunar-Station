@@ -26,6 +26,7 @@ public class UndoMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         undoStack.Push(transform.position);
+        undoStack.Push(transform.position);
         lastUndo = undoStack.Peek();
         undoInd = FindObjectOfType<UndoIndicator>();
         SetObserverCharges (undoCharges, undoUsed = false);
@@ -45,15 +46,22 @@ public class UndoMovement : MonoBehaviour
     void Update()
     {
 
-        if (CheckDistancePeek() && CheckDistancePrevious() && characterController.isGrounded)
+        if (CheckDistancePeek() && characterController.isGrounded)
         {
             undoStack.Push(transform.position);
         }
+
+
         Debug.DrawRay(undoStack.Peek(), Vector3.up, Color.yellow);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (undoStack.Count > 1 && undoCharges > 0) UndoLastMovement();
+            if (undoStack.Count > 1 && undoCharges > 0 && Vector3.Distance(transform.position, undoStack.Peek()) > (undoDistance / 2)) UndoLastMovement();
+            else if (undoStack.Count > 2 && Vector3.Distance(transform.position, undoStack.Peek()) < (undoDistance / 2))
+            {
+                undoStack.Pop();
+                UndoLastMovement();
+            }
             else if (undoStack.Count <= 1) Debug.Log("No positions available!");
             else if (undoCharges <= 0) Debug.Log("Not enough charges");
         }
@@ -68,6 +76,11 @@ public class UndoMovement : MonoBehaviour
         undoCharges--;
         SetObserverCharges(undoCharges, undoUsed = true);
         undoUsed = false;
+
+        if (undoStack.Count < 2 && characterController.isGrounded)
+        {
+            undoStack.Push(transform.position);
+        }
     }
 
     public void AddUndoCharge()
@@ -85,11 +98,6 @@ public class UndoMovement : MonoBehaviour
     bool CheckDistancePeek()
     {
         if (Vector3.Distance(transform.position, undoStack.Peek()) > undoDistance) return true;
-        else return false;
-    }
-    bool CheckDistancePrevious()
-    {
-        if (Vector3.Distance(transform.position, lastUndo) > (undoDistance/2)) return true;
         else return false;
     }
 
