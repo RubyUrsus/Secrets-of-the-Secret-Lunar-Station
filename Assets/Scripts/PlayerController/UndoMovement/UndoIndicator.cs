@@ -3,16 +3,21 @@ using UnityEngine.Rendering.Universal;
 using System.Collections;
 using UnityEngine.Rendering;
 
-public class UndoIndicator : MonoBehaviour
+public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
 {
+    private UndoMovement undoMovement;
     [SerializeField] AudioEvent teleportSound;
     public Volume volume;
     private Vignette vignette;
     public float maxIntensity = 0.5f;
     public float flashDuration = 0.5f;
+    private int undoCharges;
 
-    void Start()
+    void Awake()
     {
+        undoMovement = FindObjectOfType<UndoMovement>();
+        undoMovement.AddUndoMovementListener(this);
+
         // Varmista, että Vignette löytyy Volume-profiilista
         if (volume != null && volume.profile.TryGet(out vignette))
         {
@@ -25,38 +30,40 @@ public class UndoIndicator : MonoBehaviour
         }
     }
 
-    public void TriggerUndoFlash()
-    {
-        if (vignette != null) // Tarkistetaan, että vignette löytyy ennen käynnistystä
-        {
-            StartCoroutine(UndoFlashRoutine());
-        }
-    }
 
     private IEnumerator UndoFlashRoutine()
     {
         float elapsedTime = 0f;
 
-        // Nosta intensity maksimiasetukseen
-        while (elapsedTime < flashDuration / 2)
-        {
-            vignette.intensity.value = Mathf.Lerp(0, maxIntensity, elapsedTime / (flashDuration / 2));
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        elapsedTime = 0f;
-
         // Pienennä intensity takaisin nollaan
-        while (elapsedTime < flashDuration / 2)
+        while (elapsedTime < flashDuration)
         {
-            vignette.intensity.value = Mathf.Lerp(maxIntensity, 0, elapsedTime / (flashDuration / 2));
+            vignette.intensity.value = Mathf.Lerp(maxIntensity, 0, elapsedTime / flashDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         // Varmistaa, että intensiteetti palautuu nollaan
         vignette.intensity.value = 0;
+    }
+
+
+    private void OnEnable()
+    {
+        undoMovement.AddUndoMovementListener(this);
+    }
+
+    private void OnDisable()
+    {
+        undoMovement.RemoveUndoMovementListener(this);
+    }
+
+    public void OnUndoChargesChange(int charges, bool undoUsed)
+    {
+        if (vignette != null && undoUsed) // Tarkistetaan, että vignette löytyy ennen käynnistystä
+        {
+            StartCoroutine(UndoFlashRoutine());
+        }
     }
 }
 

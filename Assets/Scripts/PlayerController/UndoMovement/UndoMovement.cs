@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using Unity.VisualScripting;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class UndoMovement : MonoBehaviour
 {
+    private List<IOnUndoChargesChange> iOnUndoChargesChange = new List<IOnUndoChargesChange>();
     Stack<Vector3> undoStack = new Stack<Vector3>();
     [SerializeField]
     int undoDistance = 10;
@@ -26,6 +28,17 @@ public class UndoMovement : MonoBehaviour
         undoStack.Push(transform.position);
         lastUndo = undoStack.Peek();
         undoInd = FindObjectOfType<UndoIndicator>();
+        SetObserverCharges (undoCharges, undoUsed = false);
+    }
+
+    public void AddUndoMovementListener(IOnUndoChargesChange listener)
+    {
+        if (iOnUndoChargesChange.Contains(listener) == false) iOnUndoChargesChange.Add(listener);
+    }
+
+    public void RemoveUndoMovementListener(IOnUndoChargesChange listener)
+    {
+        if (iOnUndoChargesChange.Contains(listener)) iOnUndoChargesChange.Remove(listener);
     }
 
     // Update is called once per frame
@@ -53,12 +66,15 @@ public class UndoMovement : MonoBehaviour
         lastUndo = undoStack.Peek();
         transform.position = undoStack.Pop();
         undoCharges--;
-        undoInd.TriggerUndoFlash();
+        SetObserverCharges(undoCharges, undoUsed = true);
+        undoUsed = false;
     }
 
     public void AddUndoCharge()
     {
         undoCharges++;
+        SetObserverCharges(undoCharges, undoUsed = false);
+
     }
 
     public void ClearStack()
@@ -77,4 +93,11 @@ public class UndoMovement : MonoBehaviour
         else return false;
     }
 
+    void SetObserverCharges(int undoCharges,bool undoUsed)
+    {
+        foreach (var i in iOnUndoChargesChange)
+        {
+            i.OnUndoChargesChange(undoCharges, undoUsed);
+        }
+    }
 }
