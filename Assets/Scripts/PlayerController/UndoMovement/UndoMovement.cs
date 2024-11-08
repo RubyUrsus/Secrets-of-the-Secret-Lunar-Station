@@ -51,7 +51,7 @@ public class UndoMovement : MonoBehaviour
         }
         Debug.DrawRay(undoStack.Peek(), Vector3.up, Color.yellow);
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (undoStack.Count > 1 && undoCharges > 0) UndoLastMovement();
             else if (undoStack.Count <= 1) Debug.Log("No positions available!");

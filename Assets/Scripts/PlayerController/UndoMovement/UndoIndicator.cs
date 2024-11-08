@@ -7,9 +7,12 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
 {
     private UndoMovement undoMovement;
     [SerializeField] AudioEvent teleportSound;
+    AudioSource audioSource;
     public Volume volume;
     private Vignette vignette;
-    public float maxIntensity = 0.5f;
+    [SerializeField]
+    float maxIntensity = 0.5f;
+    [SerializeField]
     public float flashDuration = 0.5f;
     private int undoCharges;
 
@@ -28,6 +31,7 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
         {
             Debug.LogWarning("Vignette-efektiä ei löytynyt Volume Profilesta!");
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -63,6 +67,7 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
         if (vignette != null && undoUsed) // Tarkistetaan, että vignette löytyy ennen käynnistystä
         {
             StartCoroutine(UndoFlashRoutine());
+            teleportSound.Play(audioSource);
         }
     }
 }
