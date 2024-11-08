@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class UndoIndicator : MonoBehaviour
 {
-
+    [SerializeField] AudioEvent teleportSound;
     public Volume volume;
     private Vignette vignette;
     public float maxIntensity = 0.5f;

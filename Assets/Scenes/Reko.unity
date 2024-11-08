@@ -289,6 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b448a9853b6d45c4cb64bbf86d98cf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportSound: {fileID: 11400000, guid: 3d254e81e2cbae640aab314867cd668d, type: 2}
   volume: {fileID: 832575518}
   maxIntensity: 0.3
   flashDuration: 0.5
