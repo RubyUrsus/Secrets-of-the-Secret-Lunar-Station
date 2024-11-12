@@ -18,8 +18,6 @@ public class NewBehaviour : MonoBehaviour
     [SerializeField]
     float attackCoolDown;
     NavMeshAgent agent;
-
-    //Enemy_Health enemyhealth;
     [SerializeField]
     EnemyHealth enemyhealth;
     // Start is called before the first frame update
