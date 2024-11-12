@@ -13,7 +13,7 @@ public class UIChargeLeft : MonoBehaviour, IOnUndoChargesChange
     private void Awake()
     {
         chargesLeftText = GetComponent<TextMeshProUGUI>();
-        chargesLeftText.text = "CHARGES LEFT " + chargesLeft.ToString();
+        chargesLeftText.text = chargesLeft.ToString();
         undoMovement = FindObjectOfType<UndoMovement>();
         undoMovement.AddUndoMovementListener(this);
     }
@@ -22,7 +22,7 @@ public class UIChargeLeft : MonoBehaviour, IOnUndoChargesChange
     public void OnUndoChargesChange(int charges, bool undoUsed)
     {
         chargesLeft = charges;
-        chargesLeftText.text = "CHARGES LEFT " + chargesLeft.ToString();
+        chargesLeftText.text = chargesLeft.ToString();
     }
 
     private void OnEnable()
