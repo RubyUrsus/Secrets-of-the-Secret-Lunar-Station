@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UndoLaite : MonoBehaviour, IInteractable
+public class Key : MonoBehaviour, IInteractable
 {
-    public string UIText => "Undo machine";
+    public string UIText => "Pick up key";
 
     public void Interact()
     {
