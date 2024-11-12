@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIChargeLeft : MonoBehaviour, IOnUndoChargesChange
 {
     private UndoMovement undoMovement;
     TextMeshProUGUI chargesLeftText;
-    [SerializeField]
-    int chargesLeft;
+    [SerializeField] int chargesLeft;
 
     private void Awake()
     {
@@ -23,6 +23,7 @@ public class UIChargeLeft : MonoBehaviour, IOnUndoChargesChange
     {
         chargesLeft = charges;
         chargesLeftText.text = chargesLeft.ToString();
+        
     }
 
     private void OnEnable()
