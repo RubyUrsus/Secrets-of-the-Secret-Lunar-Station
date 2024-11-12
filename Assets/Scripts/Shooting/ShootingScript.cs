@@ -56,7 +56,7 @@ public class ShootingScript : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.velocity = firePoint.forward * bulletSpeed;
+            rb.velocity = firePoint.forward * bulletSpeed * Time.deltaTime * 40;
         }
 
         // Optional: Destroy bullet after 1 seconds to prevent memory overload

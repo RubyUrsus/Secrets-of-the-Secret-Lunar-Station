@@ -1480,7 +1480,7 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 1118891419}
   recoilCamera: {fileID: 1872241368}
-  bulletSpeed: 970
+  bulletSpeed: 1500
   fireRate: 10
   recoilAmount: 2
   recoilRecoverySpeed: 5
@@ -1842,12 +1842,12 @@ PrefabInstance:
     - target: {fileID: 8134306433294258261, guid: 5e1a34ef72525c142acfa297702130cb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8134306433294258261, guid: 5e1a34ef72525c142acfa297702130cb,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8134306433294258261, guid: 5e1a34ef72525c142acfa297702130cb,
         type: 3}
