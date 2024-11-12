@@ -7,8 +7,8 @@ using UnityEngine;
 public class InteractSystem : MonoBehaviour
 {
     [SerializeField] Transform camTransform;
-    //[SerializeField] GlobalString UIText;
-    [SerializeField] TextMeshProUGUI UIText;
+    [SerializeField] GlobalString UIText;
+    //[SerializeField] TextMeshProUGUI UIText;
 
     [SerializeField] float maxInteractDistance = 5;
 
@@ -28,8 +28,7 @@ public class InteractSystem : MonoBehaviour
 
             if ((interactable != null) && hitInfo.distance < 3)
             {
-                ShowUIText();
-                UIText.text = interactable.UIText;
+                UIText.value = interactable.UIText;
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -44,14 +43,8 @@ public class InteractSystem : MonoBehaviour
         else HideUIText();
     }
 
-
-    private void ShowUIText()
-    {
-        UIText.gameObject.SetActive(true);
-    }
-
     private void HideUIText()
     {
-        UIText.gameObject.SetActive(false);
+        UIText.value = "";
     }
 }
