@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 669356964}
   m_Layer: 5
   m_Name: ChargesLeft
-  m_TagString: Untagged
+  m_TagString: UndoChargesUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -802,6 +802,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9194640806619016600, guid: 5eda7fe4b3f43564fa50d0e8268a42f6,
+        type: 3}
+      propertyPath: undoUI
+      value: 
+      objectReference: {fileID: 669356962}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

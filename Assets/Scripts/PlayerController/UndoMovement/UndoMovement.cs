@@ -16,8 +16,10 @@ public class UndoMovement : MonoBehaviour
     CharacterController characterController;
     Vector3 lastUndo;
     [SerializeField]
-    int undoCharges = 3;
+    int undoCharges = 1;
     bool undoUsed;
+    [SerializeField]
+    Vector3 startPos;
 
     UndoIndicator undoInd;
 
@@ -30,6 +32,7 @@ public class UndoMovement : MonoBehaviour
         lastUndo = undoStack.Peek();
         undoInd = FindObjectOfType<UndoIndicator>();
         SetObserverCharges (undoCharges, undoUsed = false);
+        startPos = transform.position;
     }
 
     public void AddUndoMovementListener(IOnUndoChargesChange listener)
@@ -90,6 +93,12 @@ public class UndoMovement : MonoBehaviour
 
     }
 
+    public void ClearCharges()
+    {
+        undoCharges = 0;
+        SetObserverCharges(undoCharges, undoUsed = false);
+    }
+
     public void ClearStack()
     {
         undoStack.Clear();
@@ -107,5 +116,10 @@ public class UndoMovement : MonoBehaviour
         {
             i.OnUndoChargesChange(undoCharges, undoUsed);
         }
+    }
+
+    public void PushZero()
+    {
+        undoStack.Push(startPos);
     }
 }
