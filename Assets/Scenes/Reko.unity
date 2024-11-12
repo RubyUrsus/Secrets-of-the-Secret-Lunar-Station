@@ -230,66 +230,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2166432737331288111, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: pickUpUIText
-      value: 
-      objectReference: {fileID: 11400000, guid: 3dba2e3751e432c459556e76ed407769,
-        type: 2}
     - target: {fileID: 4884513284225990868, guid: 7fb8f1c2975157b40955d4b88818da20,
         type: 3}
       propertyPath: m_Name
       value: PRE_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574570263124308524, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574570263124308524, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574570263124308524, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574570263124308524, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574570263124308524, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574570263124308524, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868100527818983334, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868100527818983334, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868100527818983334, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752117056806065891, guid: 7fb8f1c2975157b40955d4b88818da20,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

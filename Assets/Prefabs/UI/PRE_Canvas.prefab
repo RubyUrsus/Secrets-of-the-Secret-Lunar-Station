@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 180847281026219520}
   - component: {fileID: 2912041795255453449}
   - component: {fileID: 1775815575929918065}
-  - component: {fileID: 1043846969685684941}
   m_Layer: 5
   m_Name: PRE_Canvas
   m_TagString: Untagged
@@ -105,19 +104,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1043846969685684941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4884513284225990868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63eab95d216c6b74bb450e90df579502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  undoIcon: {fileID: 8752117056806065891}
 --- !u!1 &5396254508275980058
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,10 +137,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1832168604829044455}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 141.07794, y: -146.18309}
-  m_SizeDelta: {x: 260.156, y: 76.366}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 500, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1384442362931468421
 CanvasRenderer:
@@ -218,8 +204,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -354,7 +340,7 @@ GameObject:
   - component: {fileID: 8752117056806065891}
   m_Layer: 5
   m_Name: Undo
-  m_TagString: Untagged
+  m_TagString: UndoChargesUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

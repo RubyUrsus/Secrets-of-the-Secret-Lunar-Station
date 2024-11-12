@@ -17,12 +17,20 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
     public float flashDuration = 0.5f;
     private int undoCharges;
 
+    private Inventory inventory;
+    Image undoIcon;
+
 
     void Awake()
     {
 
         undoMovement = FindObjectOfType<UndoMovement>();
         undoMovement.AddUndoMovementListener(this);
+
+        inventory = FindObjectOfType<Inventory>();
+        GameObject go = GameObject.FindGameObjectWithTag("UndoChargesUI");
+        undoIcon = go.GetComponent<Image>();
+        undoIcon.gameObject.SetActive(false);
 
         // Varmista, että Vignette löytyy Volume-profiilista
         if (volume != null && volume.profile.TryGet(out vignette))
@@ -39,6 +47,12 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
 
 
 
+    private void Update()
+    {
+        if (inventory.HasUndo) undoIcon.gameObject.SetActive(true);
+        else undoIcon.gameObject.SetActive(false);
+    }
+
     private IEnumerator UndoFlashRoutine()
     {
         float elapsedTime = 0f;
@@ -46,11 +60,14 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
         // Pienennä intensity takaisin nollaan
         while (elapsedTime < flashDuration)
         {
+            undoIcon.fillAmount = Mathf.Lerp(1, 0, elapsedTime / flashDuration);
             vignette.intensity.value = Mathf.Lerp(maxIntensity, 0, elapsedTime / flashDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
+
+        undoIcon.fillAmount = 1;
         // Varmistaa, että intensiteetti palautuu nollaan
         vignette.intensity.value = 0;
     }
