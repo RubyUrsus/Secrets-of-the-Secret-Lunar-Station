@@ -17,13 +17,9 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
     public float flashDuration = 0.5f;
     private int undoCharges;
 
-    private Inventory inventory;
-    [SerializeField] Image undo;
 
     void Awake()
     {
-        inventory = FindObjectOfType<Inventory>();
-        undo.gameObject.SetActive(false);
 
         undoMovement = FindObjectOfType<UndoMovement>();
         undoMovement.AddUndoMovementListener(this);
@@ -41,11 +37,6 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void Update()
-    {
-        if (inventory.HasUndo) undo.gameObject.SetActive(true);
-        else undo.gameObject.SetActive(false);
-    }
 
 
     private IEnumerator UndoFlashRoutine()
@@ -55,13 +46,10 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
         // Pienennä intensity takaisin nollaan
         while (elapsedTime < flashDuration)
         {
-            undo.fillAmount = Mathf.Lerp(1, 0, elapsedTime / flashDuration);
             vignette.intensity.value = Mathf.Lerp(maxIntensity, 0, elapsedTime / flashDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        undo.fillAmount = 1;
 
         // Varmistaa, että intensiteetti palautuu nollaan
         vignette.intensity.value = 0;

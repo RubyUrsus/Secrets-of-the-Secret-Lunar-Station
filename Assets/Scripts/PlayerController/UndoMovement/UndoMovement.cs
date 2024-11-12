@@ -27,12 +27,9 @@ public class UndoMovement : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        undoStack.Push(transform.position);
-        undoStack.Push(transform.position);
         lastUndo = undoStack.Peek();
         undoInd = FindObjectOfType<UndoIndicator>();
         SetObserverCharges (undoCharges, undoUsed = false);
-        startPos = transform.position;
     }
 
     public void AddUndoMovementListener(IOnUndoChargesChange listener)
@@ -59,7 +56,11 @@ public class UndoMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (undoStack.Count > 1 && undoCharges > 0 && Vector3.Distance(transform.position, undoStack.Peek()) > (undoDistance / 2)) UndoLastMovement();
+            if (undoStack.Count > 1 && undoCharges > 0 && Vector3.Distance(transform.position, undoStack.Peek()) > (undoDistance / 2))
+            {
+                UndoLastMovement();
+            }
+                
             else if (undoStack.Count > 2 && Vector3.Distance(transform.position, undoStack.Peek()) < (undoDistance / 2))
             {
                 undoStack.Pop();
@@ -122,4 +123,15 @@ public class UndoMovement : MonoBehaviour
     {
         undoStack.Push(startPos);
     }
+
+
+    public void OnUndoPickUp()
+    {
+        undoCharges = 1;
+        undoStack.Clear();
+        undoStack.Push(startPos);
+        undoStack.Push(startPos);
+
+    }
+
 }
