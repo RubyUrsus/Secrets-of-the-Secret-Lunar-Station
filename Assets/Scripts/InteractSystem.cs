@@ -25,7 +25,7 @@ public class InteractSystem : MonoBehaviour
             {
                 hittingInteractable = true;
 
-                if (Input.GetKeyDown(KeyCode.R))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (interactable != null)
                     {
