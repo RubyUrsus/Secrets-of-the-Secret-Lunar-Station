@@ -45,7 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5bd42f93c50d24b88fd84e5c76bb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpen: 0
+  doorOne: {fileID: 7559981474475184972}
+  doorTwo: {fileID: 586063862168683201}
+  openPositionX: 1.8
+  closedPositionX: 0.0000001092785
+  smoothTime: 0.2
+  open: 0
 --- !u!1001 &2635172118013432078
 PrefabInstance:
   m_ObjectHideFlags: 0
