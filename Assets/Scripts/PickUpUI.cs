@@ -7,7 +7,6 @@ public class PickUpUI : MonoBehaviour
 {
     [SerializeField] GlobalString pickUpUIText;
     TextMeshProUGUI pickUpText;
-    InteractSystem interactSystem;
 
     private void Start()
     {
