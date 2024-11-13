@@ -106,10 +106,15 @@ public class ShootingScript : MonoBehaviour
             direction = hitInfo.point - firePoint.position;
             Debug.DrawRay(firePoint.position, direction, Color.green, 20);
 
-           
-            
+            Enemy enemy = hitInfo.collider.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // Apply damage to the enemy
+                enemy.TakeDamage(1, hitInfo.point, direction); // Using the impact overload to apply force
+            }
 
-            
+
+
         }
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -117,7 +122,7 @@ public class ShootingScript : MonoBehaviour
         {
             rb.velocity = firePoint.forward * bulletSpeed;
             // Optional: Destroy bullet after 1 second to prevent memory overload
-            Destroy(bullet, 0.5f);
+            Destroy(bullet, 0.2f);
         }
         
     }
