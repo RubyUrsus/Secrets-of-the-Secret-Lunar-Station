@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SetUndoMovementActive : MonoBehaviour, IInteractable
 {
+    Inventory inventory;
     UndoMovement undoMovement;
     [SerializeField]
     string setUIText;
@@ -16,6 +17,8 @@ public class SetUndoMovementActive : MonoBehaviour, IInteractable
         GameObject go = Camera.main.transform.root.gameObject;
         undoMovement = go.GetComponent<UndoMovement>();
         undoMovement.enabled = false;
+        inventory = go.GetComponent<Inventory>();
+        
     }
 
     private void Update()
@@ -28,6 +31,7 @@ public class SetUndoMovementActive : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        inventory.SetUndoBool();
         undoMovement.enabled = true;
         undoMovement.OnUndoPickUp();
         gameObject.SetActive(false);
