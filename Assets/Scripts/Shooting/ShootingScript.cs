@@ -13,17 +13,22 @@ public class ShootingScript : MonoBehaviour
     // Reference to the player's camera (or weapon)
     public Transform recoilCamera;
 
-    // Bullet settings
+    // Bullet and firing settings
     public float bulletSpeed = 20f;
     public float fireRate = 10f;
 
     // Recoil settings
-    public float recoilAmount = 2f;    // Amount of recoil
-    public float recoilRecoverySpeed = 5f;  // Speed at which recoil recovers
+    public float recoilAmount = 2f;
+    public float recoilRecoverySpeed = 5f;
 
-    private float nextFireTime = 0f;
+    // Shot tracking and cooldown settings
+    private int shotsFired = 0;        // Counter for shots fired
+    private float nextFireTime = 0f;   // Time of next allowed shot
+    private bool canShoot = true;      // Control if player can shoot
+    private float cooldownDuration = 3f;   // Cooldown time after 100 shots
+    private float cooldownStartTime = 0f;  // When the cooldown started
+
     private Vector3 originalCameraRotation;
-
     public MouseLook mouseLook;
 
     void Start()
@@ -31,20 +36,43 @@ public class ShootingScript : MonoBehaviour
         // Store the original rotation of the camera or weapon
         originalCameraRotation = recoilCamera.localEulerAngles;
 
+        // Find the MouseLook script to apply recoil
         mouseLook = FindObjectOfType<MouseLook>();
     }
 
     void Update()
     {
-        // Check if the player is holding down the fire button (left mouse button by default)
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
+        // Handle cooldown
+        if (!canShoot)
         {
+            // Check if cooldown period has passed
+            if (Time.time >= cooldownStartTime + cooldownDuration)
+            {
+                // Reset shot counter and enable shooting again
+                shotsFired = 0;
+                canShoot = true;
+            }
+            return; // Prevent further shooting until cooldown is over
+        }
+
+        // Check if the player is holding down the fire button and if it's time to shoot again
+        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && canShoot)
+        {
+            // Update nextFireTime for fire rate and fire the shot
             nextFireTime = Time.time + 1f / fireRate;
             Shoot();
             mouseLook.ApplyRecoil();
-        }
 
-        
+            // Increase shot counter
+            shotsFired++;
+
+            // Start cooldown if 100 shots have been fired
+            if (shotsFired >= 100)
+            {
+                canShoot = false;
+                cooldownStartTime = Time.time; // Start the cooldown timer
+            }
+        }
     }
 
     void Shoot()
@@ -56,26 +84,10 @@ public class ShootingScript : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.velocity = firePoint.forward * bulletSpeed * Time.deltaTime * 40;
+            rb.velocity = firePoint.forward * bulletSpeed;
         }
 
-        // Optional: Destroy bullet after 1 seconds to prevent memory overload
+        // Optional: Destroy bullet after 1 second to prevent memory overload
         Destroy(bullet, 1f);
     }
-
-    //void ApplyRecoil()
-    //{
-    //    // Randomize a slight upward rotation (recoil) in the camera or weapon
-    //    float recoilX = Random.Range(recoilAmount * 0.8f, recoilAmount); // Random upward recoil
-    //    float recoilY = Random.Range(-recoilAmount / 4, recoilAmount / 4); // Slight side-to-side recoil
-
-    //    // Apply recoil to the local rotation of the camera or weapon
-    //    recoilCamera.localEulerAngles += new Vector3(-recoilX, recoilY, 0f);
-    //}
-
-    //void RecoverRecoil()
-    //{
-    //    // Smoothly return the camera or weapon to its original rotation
-    //    recoilCamera.localEulerAngles = Vector3.Lerp(recoilCamera.localEulerAngles, originalCameraRotation, Time.deltaTime * recoilRecoverySpeed);
-    //}
 }
