@@ -4208,7 +4208,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-2.0001049041748049,"outTangent":-2.0001049041748049,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.15892595052719117,"value":0.6821314096450806,"inTangent":-0.38616108894348147,"outTangent":-0.38616108894348147,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.3296152651309967,"value":0.891700804233551,"inTangent":0.4003556966781616,"outTangent":0.4003556966781616,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.575100302696228,"value":0.7868611812591553,"inTangent":-0.14204640686511994,"outTangent":-0.14204640686511994,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.7709584832191467,"value":0.8148646950721741,"inTangent":0.1429785192012787,"outTangent":0.1429785192012787,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-2.8377561569213869,"outTangent":-2.8377561569213869,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.11137956380844116,"value":0.6839319467544556,"inTangent":-0.3715716600418091,"outTangent":-0.3715716600418091,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.2413279116153717,"value":0.956123411655426,"inTangent":0.6057828664779663,"outTangent":0.6057828664779663,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.463039755821228,"value":0.7603414058685303,"inTangent":-0.3529883623123169,"outTangent":-0.3529883623123169,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.7709584832191467,"value":0.8148646950721741,"inTangent":0.17707039415836335,"outTangent":0.17707039415836335,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -4337,7 +4337,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+      m_SerializableObject: 4.1
     m_Space: 2147483647
   m_Property:
     name: Delay
@@ -4824,7 +4824,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0.5
     m_Space: 2147483647
   m_Property:
     name: Lifetime
@@ -4975,7 +4975,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 5
+      m_SerializableObject: 8
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -5103,7 +5103,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.5,"g":0.5,"b":0.5,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.09706263989210129},{"alpha":0.800000011920929,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.5,"g":0.5,"b":0.5,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.008239871822297573},{"alpha":0.800000011920929,"time":0.6882429122924805},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
