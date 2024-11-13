@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
@@ -11,9 +12,10 @@ public class ShootingScript : MonoBehaviour
     public Transform firePoint;
 
     // Reference to the player's camera (or weapon)
-    public Transform recoilCamera;
+    //public Transform recoilCamera;
 
     // Bullet and firing settings
+    public LayerMask bulletMask;
     public float bulletSpeed = 20f;
     public float fireRate = 10f;
 
@@ -31,10 +33,18 @@ public class ShootingScript : MonoBehaviour
     private Vector3 originalCameraRotation;
     public MouseLook mouseLook;
 
+    float cooldownTick = 0.1f;
+    float tickTimer;
+
+    [SerializeField]
+    Transform camTransform;
+
+    public int ShotsFired => shotsFired;
+
     void Start()
     {
         // Store the original rotation of the camera or weapon
-        originalCameraRotation = recoilCamera.localEulerAngles;
+        originalCameraRotation = camTransform.localEulerAngles;
 
         // Find the MouseLook script to apply recoil
         mouseLook = FindObjectOfType<MouseLook>();
@@ -73,21 +83,42 @@ public class ShootingScript : MonoBehaviour
                 cooldownStartTime = Time.time; // Start the cooldown timer
             }
         }
+
+        if (!Input.GetButton("Fire1") && shotsFired != 0)
+        {
+            tickTimer += Time.deltaTime;
+            if (tickTimer > cooldownTick)
+            {
+                shotsFired--;
+                tickTimer = 0;
+            }
+        }
     }
 
     void Shoot()
     {
         // Instantiate the bullet at the fire point
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Vector3 direction = firePoint.forward;
+        if (Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit hitInfo, 1000, bulletMask, QueryTriggerInteraction.Ignore))
+        {
+            Debug.DrawRay(hitInfo.point, hitInfo.normal, Color.blue, 20);
+            direction = hitInfo.point - firePoint.position;
+            Debug.DrawRay(firePoint.position, direction, Color.green, 20);
 
-        // Add velocity to the bullet
+           
+            
+
+            
+        }
+
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.velocity = firePoint.forward * bulletSpeed;
+            // Optional: Destroy bullet after 1 second to prevent memory overload
+            Destroy(bullet, 0.5f);
         }
-
-        // Optional: Destroy bullet after 1 second to prevent memory overload
-        Destroy(bullet, 1f);
+        
     }
 }
