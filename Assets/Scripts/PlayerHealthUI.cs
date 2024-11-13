@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthUI : MonoBehaviour
 {
-    TextMeshProUGUI healthText;
-    [SerializeField] GlobalInt playerHealth;
+    Image healthBar;
+    [SerializeField] GlobalFloat playerHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthText = GetComponent<TextMeshProUGUI>();
+        healthBar = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = playerHealth.value.ToString();
+        healthBar.fillAmount = playerHealth.value;
     }
 }

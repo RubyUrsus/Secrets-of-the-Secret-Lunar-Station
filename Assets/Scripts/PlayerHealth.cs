@@ -6,11 +6,16 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] GlobalInt playerHealth;
+    [SerializeField] GlobalFloat playerHealth;
 
 
     private List<IOnHealthChange> observers = new List<IOnHealthChange>();
 
+
+    private void Start()
+    {
+        playerHealth.value = 100;
+    }
     public void AddObserver(IOnHealthChange observer)
     {
         if(!observers.Contains(observer)) observers.Add(observer);

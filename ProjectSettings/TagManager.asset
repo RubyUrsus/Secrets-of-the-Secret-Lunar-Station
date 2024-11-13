@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - UndoChargesUI
+  - Damage
   layers:
   - Default
   - TransparentFX
