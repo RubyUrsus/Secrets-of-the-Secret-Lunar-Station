@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int health = 100;
+    [SerializeField] GlobalFloat playerHealth;
 
-    private List<IOnHealthChange> observers = new List<IOnHealthChange>();
-
-    public void AddObserver(IOnHealthChange observer)
+    private void Update()
     {
-        if(!observers.Contains(observer)) observers.Add(observer);
+        if (playerHealth.currentHealth <= 0)
+        {
+            Death();
+        }
     }
 
-    public void RemoveObserver(IOnHealthChange observer)
+    private void Death()
     {
-        if(observers.Contains(observer)) observers.Remove(observer);
+        Debug.Log("Dead");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Damage")
+        {
+            playerHealth.currentHealth -= 20;
+        }
     }
 }

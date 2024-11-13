@@ -8,12 +8,8 @@ public class InteractSystem : MonoBehaviour
 {
     [SerializeField] Transform camTransform;
     [SerializeField] GlobalString UIText;
-    //[SerializeField] TextMeshProUGUI UIText;
 
     [SerializeField] float maxInteractDistance = 5;
-
-    private bool hittingInteractable;
-    public bool HittingInteractable => hittingInteractable;
 
     private void Start()
     {
