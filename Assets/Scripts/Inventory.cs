@@ -21,23 +21,23 @@ public class Inventory : MonoBehaviour
     public bool HasUndo => hasUndo;
 
 
-    public void UndoToolPickedUp()
+    public void SetUndoBool()
     {
-        hasUndo = true;
+        hasUndo = !hasUndo;
     }
 
-    public void GunPickedUp()
+    public void SetGunBool()
     {
-        hasGun = true;
+        hasGun = !hasGun;
     }
 
-    public void KeyPickedUP()
+    public void SetKeyBool()
     {
-        hasKey = true;
+        hasKey = !hasKey;
     }
 
-    public void HelmetPickedUp()
+    public void SethelmetBool()
     {
-        hasHelmet = true;
+        hasHelmet = !hasHelmet;
     }
 }
