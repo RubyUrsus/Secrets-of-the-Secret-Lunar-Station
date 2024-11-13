@@ -8,8 +8,6 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] GlobalFloat playerHealth;
 
-    //yykaa
-
     private void Update()
     {
         if (playerHealth.currentHealth <= 0)

@@ -16,7 +16,6 @@ public class PlayerHealthUI : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         healthBar.fillAmount = playerHealth.currentHealth / playerHealth.maxHealth;
