@@ -27,7 +27,6 @@ public class UndoMovement : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        lastUndo = undoStack.Peek();
         undoInd = FindObjectOfType<UndoIndicator>();
         SetObserverCharges (undoCharges, undoUsed = false);
     }
