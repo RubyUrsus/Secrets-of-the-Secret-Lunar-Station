@@ -21,15 +21,23 @@ public class Inventory : MonoBehaviour
     public bool HasUndo => hasUndo;
 
 
-    // Start is called before the first frame update
-    void Start()
+    public void UndoToolPickedUp()
     {
-        
+        hasUndo = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GunPickedUp()
     {
-        
+        hasGun = true;
+    }
+
+    public void KeyPickedUP()
+    {
+        hasKey = true;
+    }
+
+    public void HelmetPickedUp()
+    {
+        hasHelmet = true;
     }
 }
