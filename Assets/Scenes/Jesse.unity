@@ -2151,6 +2151,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8925957807447486919, guid: 4bcfbd814e1e8274ca41492bc7286591,
+        type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 750349448}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
