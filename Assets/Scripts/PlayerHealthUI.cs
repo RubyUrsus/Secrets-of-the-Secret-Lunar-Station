@@ -12,7 +12,6 @@ public class PlayerHealthUI : MonoBehaviour
     void Start()
     {
         healthBar = GetComponent<Image>();
-        playerHealth.currentHealth = playerHealth.maxHealth;
 
     }
 

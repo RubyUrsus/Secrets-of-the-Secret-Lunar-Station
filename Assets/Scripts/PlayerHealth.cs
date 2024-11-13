@@ -8,6 +8,11 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] GlobalFloat playerHealth;
 
+    private void Start()
+    {
+        playerHealth.currentHealth = playerHealth.maxHealth;
+    }
+
     private void Update()
     {
         if (playerHealth.currentHealth <= 0)
