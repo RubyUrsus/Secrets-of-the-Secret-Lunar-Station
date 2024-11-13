@@ -498,7 +498,7 @@ MonoBehaviour:
   hasGun: 0
   hasHelmet: 0
   hasKey: 0
-  hasUndo: 1
+  hasUndo: 0
 --- !u!114 &2063215897
 MonoBehaviour:
   m_ObjectHideFlags: 0
