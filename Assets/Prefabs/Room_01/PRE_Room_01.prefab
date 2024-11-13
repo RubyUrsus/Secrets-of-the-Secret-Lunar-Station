@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606378572c9eb1f4390fd3232c139416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  undoUI: {fileID: 0}
+  setUIText: Press E to pick up
 --- !u!1001 &5339426818680381913
 PrefabInstance:
   m_ObjectHideFlags: 0
