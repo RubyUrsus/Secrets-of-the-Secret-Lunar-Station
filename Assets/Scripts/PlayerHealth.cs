@@ -11,11 +11,6 @@ public class PlayerHealth : MonoBehaviour
 
     private List<IOnHealthChange> observers = new List<IOnHealthChange>();
 
-
-    private void Start()
-    {
-        playerHealth.value = 100;
-    }
     public void AddObserver(IOnHealthChange observer)
     {
         if(!observers.Contains(observer)) observers.Add(observer);
@@ -30,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Damage")
         {
-            playerHealth.value -= 20;
+            playerHealth.currentHealth -= 20;
         }
     }
 }

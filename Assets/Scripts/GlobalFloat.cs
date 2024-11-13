@@ -6,5 +6,7 @@ using UnityEngine;
 
 public class GlobalFloat : ScriptableObject
 {
-    public float value;
+    public float maxHealth;
+    public float minHealth;
+    public float currentHealth;
 }

@@ -9,15 +9,16 @@ public class PlayerHealthUI : MonoBehaviour
     Image healthBar;
     [SerializeField] GlobalFloat playerHealth;
 
-    // Start is called before the first frame update
     void Start()
     {
         healthBar = GetComponent<Image>();
+        playerHealth.currentHealth = playerHealth.maxHealth;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = playerHealth.value;
+        healthBar.fillAmount = playerHealth.currentHealth / playerHealth.maxHealth;
     }
 }
