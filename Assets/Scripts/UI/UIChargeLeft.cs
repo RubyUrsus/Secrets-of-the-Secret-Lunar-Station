@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIChargeLeft : MonoBehaviour, IOnUndoChargesChange
 {
     private UndoMovement undoMovement;
     TextMeshProUGUI chargesLeftText;
-    [SerializeField]
-    int chargesLeft;
+    [SerializeField] int chargesLeft;
 
     private void Awake()
     {
         chargesLeftText = GetComponent<TextMeshProUGUI>();
-        chargesLeftText.text = "CHARGES LEFT " + chargesLeft.ToString();
+        chargesLeftText.text = chargesLeft.ToString();
         undoMovement = FindObjectOfType<UndoMovement>();
         undoMovement.AddUndoMovementListener(this);
     }
@@ -22,7 +22,8 @@ public class UIChargeLeft : MonoBehaviour, IOnUndoChargesChange
     public void OnUndoChargesChange(int charges, bool undoUsed)
     {
         chargesLeft = charges;
-        chargesLeftText.text = "CHARGES LEFT " + chargesLeft.ToString();
+        chargesLeftText.text = chargesLeft.ToString();
+        
     }
 
     private void OnEnable()

@@ -16,8 +16,10 @@ public class UndoMovement : MonoBehaviour
     CharacterController characterController;
     Vector3 lastUndo;
     [SerializeField]
-    int undoCharges = 3;
+    int undoCharges = 1;
     bool undoUsed;
+    [SerializeField]
+    Vector3 startPos;
 
     UndoIndicator undoInd;
 
@@ -25,8 +27,6 @@ public class UndoMovement : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        undoStack.Push(transform.position);
-        undoStack.Push(transform.position);
         lastUndo = undoStack.Peek();
         undoInd = FindObjectOfType<UndoIndicator>();
         SetObserverCharges (undoCharges, undoUsed = false);
@@ -56,7 +56,11 @@ public class UndoMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (undoStack.Count > 1 && undoCharges > 0 && Vector3.Distance(transform.position, undoStack.Peek()) > (undoDistance / 2)) UndoLastMovement();
+            if (undoStack.Count > 1 && undoCharges > 0 && Vector3.Distance(transform.position, undoStack.Peek()) > (undoDistance / 2))
+            {
+                UndoLastMovement();
+            }
+                
             else if (undoStack.Count > 2 && Vector3.Distance(transform.position, undoStack.Peek()) < (undoDistance / 2))
             {
                 undoStack.Pop();
@@ -90,6 +94,12 @@ public class UndoMovement : MonoBehaviour
 
     }
 
+    public void ClearCharges()
+    {
+        undoCharges = 0;
+        SetObserverCharges(undoCharges, undoUsed = false);
+    }
+
     public void ClearStack()
     {
         undoStack.Clear();
@@ -108,4 +118,20 @@ public class UndoMovement : MonoBehaviour
             i.OnUndoChargesChange(undoCharges, undoUsed);
         }
     }
+
+    public void PushZero()
+    {
+        undoStack.Push(startPos);
+    }
+
+
+    public void OnUndoPickUp()
+    {
+        undoCharges = 1;
+        undoStack.Clear();
+        undoStack.Push(startPos);
+        undoStack.Push(startPos);
+
+    }
+
 }
