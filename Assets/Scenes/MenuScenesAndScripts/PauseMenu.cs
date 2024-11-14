@@ -11,7 +11,6 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         ContinueButton.onClick.AddListener(OnContinueButton);
-        //menuCanvas.SetActive(false);
     }
 
     void Update()
@@ -31,12 +30,13 @@ public class PauseMenu : MonoBehaviour
         StartCoroutine(PressDelay());
 
         menuCanvas.SetActive(false);
-        Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     IEnumerator PressDelay()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        Time.timeScale = 1;
     }
 }
