@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject menuCanvas;
+
     public void OnPlayButton()
     {
         SceneManager.LoadScene(2);
@@ -16,10 +17,4 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnContinueButton()
-    {
-        menuCanvas.SetActive(false);
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
 }
