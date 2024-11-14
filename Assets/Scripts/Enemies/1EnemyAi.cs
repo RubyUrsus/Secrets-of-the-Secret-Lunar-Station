@@ -18,14 +18,14 @@ public class NewBehaviour : MonoBehaviour
     [SerializeField]
     float attackCoolDown;
     NavMeshAgent agent;
-    [SerializeField]
-    EnemyHealth enemyhealth;
+    //[SerializeField]
+    EnemyHealth health;
     // Start is called before the first frame update
     void Start()
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        enemyhealth = GetComponent<EnemyHealth>();
+        health = GetComponent<EnemyHealth>();
         attackCoolDown = maxAttackCoolDown;
     }
 
@@ -47,7 +47,7 @@ public class NewBehaviour : MonoBehaviour
         {
             attackCoolDown -= Time.deltaTime;
         }
-        if (enemyhealth.isDead) Death();
+        if (health.isDead) Death();
     }
     public void Death()
     {

@@ -26,15 +26,21 @@ public class EnemySpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= SpawnTime)
         {
-            Debug.Log("Spawning started");
-
-            //while (maxEnemiesToSpawn > 0)
+            //Debug.Log("Spawning started");
             {
-                Debug.Log(maxEnemiesToSpawn - 1);
+                //Debug.Log(maxEnemiesToSpawn - 1);
                 //maxEnemiesToSpawn = maxEnemiesToSpawn - 1;
-                maxEnemiesToSpawn -= 1;
-                SpawnEnemies();
-                timer = 0;
+                //maxEnemiesToSpawn -= 1;
+                if (maxEnemiesToSpawn > 0)
+                {
+                    maxEnemiesToSpawn -= 1;
+                    SpawnEnemies();
+                    timer = 0;
+                }
+                else
+                {
+                    timer = 0;
+                }
             }
         }
     }

@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     Animator animator;
-    [SerializeField]
+    //[SerializeField]
     float enemyHealth;
     NavMeshAgent agent;
     public bool isDead;
