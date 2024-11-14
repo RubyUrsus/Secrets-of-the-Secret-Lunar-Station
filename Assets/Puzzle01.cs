@@ -6,21 +6,11 @@ public class Puzzle01 : MonoBehaviour
 {
     [SerializeField] Animator doorAnimator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] float waitTime = 1.5f;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "DoorTrigger")
+        if (other.gameObject.tag == "Player")
         {
             doorAnimator.SetBool("Triggered", true);
         }
@@ -33,7 +23,7 @@ public class Puzzle01 : MonoBehaviour
 
     IEnumerator CloseDoor()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(waitTime);
         doorAnimator.SetBool("Triggered", false);
     }
 }
