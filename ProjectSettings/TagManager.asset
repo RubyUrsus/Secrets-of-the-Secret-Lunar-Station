@@ -7,6 +7,7 @@ TagManager:
   - UndoChargesUI
   - Bullet
   - Enemy
+  - HelmetUI
   layers:
   - Default
   - TransparentFX
