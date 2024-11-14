@@ -28,10 +28,11 @@ public class EnemySpawner : MonoBehaviour
         {
             Debug.Log("Spawning started");
 
-            while (maxEnemiesToSpawn > 0)
+            //while (maxEnemiesToSpawn > 0)
             {
                 Debug.Log(maxEnemiesToSpawn - 1);
-                maxEnemiesToSpawn = maxEnemiesToSpawn - 1;
+                //maxEnemiesToSpawn = maxEnemiesToSpawn - 1;
+                maxEnemiesToSpawn -= 1;
                 SpawnEnemies();
                 timer = 0;
             }
@@ -42,6 +43,5 @@ public class EnemySpawner : MonoBehaviour
     {
         Instantiate(enemy, transform.position, Quaternion.identity);
         timer = 0;
-        
     }
 }
