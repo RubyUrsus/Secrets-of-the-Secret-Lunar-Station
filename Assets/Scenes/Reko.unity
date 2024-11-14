@@ -134,6 +134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5bd42f93c50d24b88fd84e5c76bb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &475091711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3942323418216180672, guid: 4bcfbd814e1e8274ca41492bc7286591,
+    type: 3}
+  m_PrefabInstance: {fileID: 2360303054468078422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &489735964 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5108435691127407376, guid: 5eda7fe4b3f43564fa50d0e8268a42f6,
@@ -548,6 +554,11 @@ PrefabInstance:
       propertyPath: openDoor1
       value: 
       objectReference: {fileID: 489735964}
+    - target: {fileID: 5255864112090065529, guid: e0b4c12fb42b2e74a8645097a4998a3f,
+        type: 3}
+      propertyPath: pickUpGun
+      value: 
+      objectReference: {fileID: 475091711}
     - target: {fileID: 5255864112090065529, guid: e0b4c12fb42b2e74a8645097a4998a3f,
         type: 3}
       propertyPath: closeDoor1
