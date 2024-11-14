@@ -61,7 +61,7 @@ public class UndoMovement : MonoBehaviour
                 UndoLastMovement();
             }
                 
-            else if (undoStack.Count > 2 && Vector3.Distance(transform.position, undoStack.Peek()) < (undoDistance / 2))
+            else if (undoStack.Count > 2 && undoCharges > 0 && Vector3.Distance(transform.position, undoStack.Peek()) < (undoDistance / 2))
             {
                 undoStack.Pop();
                 UndoLastMovement();
