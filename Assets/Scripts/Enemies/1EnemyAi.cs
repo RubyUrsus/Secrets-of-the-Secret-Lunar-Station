@@ -20,21 +20,28 @@ public class NewBehaviour : MonoBehaviour
     NavMeshAgent agent;
     //[SerializeField]
     EnemyHealth enemyhealth;
-    // Start is called before the first frame update
+
+    private CalculateVelocity calculateVelocity;
+
     void Start()
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         enemyhealth = GetComponent<EnemyHealth>();
         attackCoolDown = maxAttackCoolDown;
+
+        animator = GetComponentInChildren<Animator>();
+        calculateVelocity = GetComponent<CalculateVelocity>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //animator.SetFloat("Velocity", agent.velocity.magnitude);
+        animator.SetFloat("Velocity", agent.velocity.magnitude);
         timer += Time.deltaTime;
-        if(timer > 1)
+        animator.SetFloat("VelocityZ", calculateVelocity.InverseVelocity.z, 0.05f, Time.deltaTime);
+        animator.SetFloat("VelocityX", calculateVelocity.InverseVelocity.x, 0.05f, Time.deltaTime);
+        if (timer > 1)
         {
             if (Vector3.Distance(transform.position, player.transform.position) > 1.5)
             {
@@ -47,13 +54,13 @@ public class NewBehaviour : MonoBehaviour
         {
             attackCoolDown -= Time.deltaTime;
         }
-        if (enemyhealth.isDead) Death();
+        //if (enemyhealth.isDead) Death();
     }
-    public void Death()
-    {
-        //agent.IsStopped = true;
-        enabled = false;
-    }
+    //public void Death()
+    //{
+    //    animator.SetTrigger("IsStopped");
+    //    enabled = false;
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -64,7 +71,7 @@ public class NewBehaviour : MonoBehaviour
             IDamageable damageable = other.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                //animator
+                animator.SetTrigger("Attacks");
                 damageable.TakeDamage(damage);
             }
         }
