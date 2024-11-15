@@ -36,7 +36,7 @@ public class ShootingScript : MonoBehaviour
     float cooldownTick = 0.1f;
     float tickTimer;
 
-    [SerializeField]
+    
     Transform camTransform;
 
     public int ShotsFired => shotsFired;
@@ -48,6 +48,8 @@ public class ShootingScript : MonoBehaviour
 
         // Find the MouseLook script to apply recoil
         mouseLook = FindObjectOfType<MouseLook>();
+
+        camTransform = Camera.main.transform;
     }
 
     void Update()
