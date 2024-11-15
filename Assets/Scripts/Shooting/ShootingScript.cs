@@ -36,7 +36,7 @@ public class ShootingScript : MonoBehaviour
     float cooldownTick = 0.1f;
     float tickTimer;
 
-    
+    Animator animator;
     Transform camTransform;
 
     public int ShotsFired => shotsFired;
@@ -50,6 +50,7 @@ public class ShootingScript : MonoBehaviour
         mouseLook = FindObjectOfType<MouseLook>();
 
         camTransform = Camera.main.transform;
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -113,6 +114,7 @@ public class ShootingScript : MonoBehaviour
             {
                 // Apply damage to the enemy
                 enemy.TakeDamage(1, hitInfo.point, direction); // Using the impact overload to apply force
+                animator.SetTrigger("TakeDamage");
             }
 
 
