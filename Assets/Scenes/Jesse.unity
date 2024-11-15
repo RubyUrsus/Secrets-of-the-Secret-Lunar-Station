@@ -1333,6 +1333,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8425ed149e47e043a030b0f48dd67fd, type: 3}
+--- !u!114 &799836414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5217697364009269701, guid: d8425ed149e47e043a030b0f48dd67fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 799836413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1333905448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1617,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa556ce4b47a0d04ca3141d76b03c833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuCanvas: {fileID: 1774376727}
+  menuCanvas: {fileID: 1774376727}
+  ContinueButton: {fileID: 799836414}
 --- !u!4 &1678775218
 Transform:
   m_ObjectHideFlags: 0
