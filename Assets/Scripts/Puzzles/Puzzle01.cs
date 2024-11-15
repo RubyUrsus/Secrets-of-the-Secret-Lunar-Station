@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Puzzle01 : MonoBehaviour
 {
-    [SerializeField] Animator doorAnimator;
+    [SerializeField] Door01Controller doorController;
 
     [SerializeField] float waitTime = 1.5f;
 
@@ -12,7 +12,7 @@ public class Puzzle01 : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            doorAnimator.SetBool("Triggered", true);
+            doorController.Interact();
         }
     }
 
@@ -24,6 +24,6 @@ public class Puzzle01 : MonoBehaviour
     IEnumerator CloseDoor()
     {
         yield return new WaitForSeconds(waitTime);
-        doorAnimator.SetBool("Triggered", false);
+        doorController.Interact();
     }
 }

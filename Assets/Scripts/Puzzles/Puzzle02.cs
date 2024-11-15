@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Puzzle02 : MonoBehaviour
 {
-    [SerializeField] Animator doorAnimator;
+    [SerializeField] Door01Controller doorController;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bullet")
         {
-            doorAnimator.SetBool("Triggered", true);
+            doorController.Interact();
+            Destroy(gameObject);
         }
     }
 }
