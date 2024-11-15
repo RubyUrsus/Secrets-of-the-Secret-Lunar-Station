@@ -36,7 +36,7 @@ public class ShootingScript : MonoBehaviour
     float cooldownTick = 0.1f;
     float tickTimer;
 
-    Animator animator;
+    [SerializeField]
     Transform camTransform;
 
     public int ShotsFired => shotsFired;
@@ -50,7 +50,7 @@ public class ShootingScript : MonoBehaviour
         mouseLook = FindObjectOfType<MouseLook>();
 
         camTransform = Camera.main.transform;
-        animator = GetComponentInChildren<Animator>();
+
     }
 
     void Update()
@@ -69,7 +69,7 @@ public class ShootingScript : MonoBehaviour
         }
 
         // Check if the player is holding down the fire button and if it's time to shoot again
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && canShoot)
+        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && canShoot && Time.timeScale != 0)
         {
             // Update nextFireTime for fire rate and fire the shot
             nextFireTime = Time.time + 1f / fireRate;
@@ -114,7 +114,7 @@ public class ShootingScript : MonoBehaviour
             {
                 // Apply damage to the enemy
                 enemy.TakeDamage(1, hitInfo.point, direction); // Using the impact overload to apply force
-                animator.SetTrigger("TakeDamage");
+                
             }
 
 
