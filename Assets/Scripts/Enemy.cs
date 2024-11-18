@@ -28,9 +28,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage, Vector3 impactPoint, Vector3 impactDirections)
     {
-        if (rb != null)
+        //if (rb != null)
         {
-            rb.AddForceAtPosition(impactDirections * 3, impactPoint, ForceMode.Impulse);
+            //rb.AddForceAtPosition(impactDirections * 3, impactPoint, ForceMode.Impulse);
             animator.SetTrigger("TakeDamage");
             Debug.Log("Takes Damage");
         }
