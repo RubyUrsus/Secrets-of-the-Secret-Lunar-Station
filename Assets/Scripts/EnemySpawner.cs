@@ -6,6 +6,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
+    float spawnTimeMin;
+    [SerializeField]
+    float spawnTimeMax;
     float SpawnTime;
     [SerializeField]
     private float timer;
@@ -13,10 +16,11 @@ public class EnemySpawner : MonoBehaviour
     int maxEnemiesToSpawn;
 
     [SerializeField]
-    GameObject enemy;
+    GameObject[] enemy;
 
     private void Start()
     {
+        SpawnTime = spawnTimeMin;
         //if ((GameObject == null) = FindObjectOfType<GameObject>();
     }
 
@@ -47,7 +51,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        Instantiate(enemy, transform.position, Quaternion.identity);
+        int randomEnemy = Random.Range(0, enemy.Length);
+        Instantiate(enemy[randomEnemy], transform.position, Quaternion.identity);
         timer = 0;
+        SpawnTime = Random.Range(spawnTimeMin, spawnTimeMax);
     }
 }
