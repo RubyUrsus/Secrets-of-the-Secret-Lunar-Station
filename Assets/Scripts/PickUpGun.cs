@@ -10,20 +10,22 @@ public class PickUpGun : MonoBehaviour, IInteractable
     Door01Controller openDoor1;
     [SerializeField]
     string setUIText;
-    [SerializeField]
     GameObject pickUpGun;
+    Inventory inventory;
     public string UIText => setUIText;
 
-    private void Start()
+    private void Awake()
     {
-        pickUpGun.SetActive(false);
+        pickUpGun = GameObject.FindGameObjectWithTag("Weapon");
+        inventory = Camera.main.transform.root.GetComponent<Inventory>();
     }
+
 
     public void Interact()
     {
         closeDoor1.Interact();
         openDoor1.Interact();
-        pickUpGun.SetActive(true);
+        inventory.SetGunBool();
         Destroy(gameObject);
     }
 

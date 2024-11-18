@@ -12,19 +12,21 @@ public class RemoveHelmetTrigger : MonoBehaviour
     [SerializeField]
     Transform targetPosition;
     bool helmetSpawned;
+    Inventory inventory;
 
     // Start is called before the first frame update
     void Start()
     {
         helmetUI = GameObject.FindGameObjectWithTag("HelmetUI");
         helmetSpawned = false;
+        inventory = FindObjectOfType<Inventory>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == Camera.main.transform.root.gameObject && helmetSpawned == false)
         {
-            helmetUI.SetActive(false);
+            inventory.SethelmetBool();
             GameObject go = Instantiate(helmetPrefab, other.transform.position + Vector3.up * 2, transform.rotation);
             StartCoroutine(MoveToPosition(go, targetPosition.position));
             helmetSpawned = true;
