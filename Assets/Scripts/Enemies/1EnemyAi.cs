@@ -37,10 +37,10 @@ public class NewBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Velocity", agent.velocity.magnitude);
+        animator.SetFloat("Velocity", calculateVelocity.InverseVelocity.magnitude);
         timer += Time.deltaTime;
-        animator.SetFloat("VelocityZ", calculateVelocity.InverseVelocity.z, 0.05f, Time.deltaTime);
-        animator.SetFloat("VelocityX", calculateVelocity.InverseVelocity.x, 0.05f, Time.deltaTime);
+        //animator.SetFloat("VelocityZ", calculateVelocity.InverseVelocity.z, 0.05f, Time.deltaTime);
+        //animator.SetFloat("VelocityX", calculateVelocity.InverseVelocity.x, 0.05f, Time.deltaTime);
         if (timer > 1)
         {
             if (Vector3.Distance(transform.position, player.transform.position) > 1.5)
