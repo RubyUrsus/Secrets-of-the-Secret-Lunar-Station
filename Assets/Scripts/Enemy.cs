@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
         {
             rb.AddForceAtPosition(impactDirections * 3, impactPoint, ForceMode.Impulse);
             animator.SetTrigger("TakeDamage");
+            Debug.Log("Takes Damage");
         }
         TakeDamage(damage);
     }
