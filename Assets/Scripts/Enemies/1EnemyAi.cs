@@ -69,10 +69,13 @@ public class NewBehaviour : MonoBehaviour
             attackCoolDown = maxAttackCoolDown;
             Debug.Log("Kutsuu");
             IDamageable damageable = other.GetComponent<IDamageable>();
-            if (damageable != null)
+            //if (damageable != null)
             {
                 animator.SetTrigger("Attacks");
-                damageable.TakeDamage(damage);
+                //playerHealth.currentHealth -= 20;
+                //damageable.TakeDamage(damage);
+                //if possible reset movement Velocity
+
             }
         }
     }
