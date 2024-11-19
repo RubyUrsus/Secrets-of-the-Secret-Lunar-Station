@@ -33,8 +33,8 @@ public class CharacterSoundController : MonoBehaviour
         if (speed > movementThreshold)
         {
             // Adjust step interval based on speed
-            float adjustedInterval = speed * (stepInterval * stepIntervalMultiplier);
-            //float adjustedInterval = 1;
+            //float adjustedInterval = (1 + (speed / 5f)) * stepInterval;
+            float adjustedInterval = 0.4f;
 
             // Count down the timer
             stepTimer -= Time.deltaTime;
@@ -56,7 +56,12 @@ public class CharacterSoundController : MonoBehaviour
     {
         // Use Rigidbody velocity for speed
         if (characterController.isGrounded && CalculateVelocity != null)
-            return CalculateVelocity.Velocity.magnitude;
+        {
+            if (CalculateVelocity.velocitySmoothed.magnitude >= 1.25f)
+
+                return CalculateVelocity.velocitySmoothed.magnitude;
+        }    
+            
 
         // Fallback to custom speed calculation (e.g., Animator)
         return 0f; // Replace with your custom logic
