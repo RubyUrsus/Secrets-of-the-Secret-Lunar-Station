@@ -56,7 +56,8 @@ public class PlayerController : MonoBehaviour
             velocity.z = 0;
         }
 
-
+        
+        
         characterController.Move(smoothMovement * movementSpeed * Time.deltaTime + velocity * Time.deltaTime);
     }
 
@@ -64,5 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         velocity += force;
     }
+
+    
 }
 

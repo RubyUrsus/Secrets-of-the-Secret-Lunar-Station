@@ -76,7 +76,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f082eae743b243f45b8d0905a91d4ad2,
         type: 3}
       propertyPath: m_Name
-      value: Sprint4 (Lv1 avaruus tukikohta)
+      value: PRE_Room1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f082eae743b243f45b8d0905a91d4ad2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
