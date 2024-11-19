@@ -7,10 +7,15 @@ public class SaveManager : MonoBehaviour
 {
     private class SaveData
     {
-        public Transform playerPos;
+        public Vector3 playerPos;
     }
 
-    [SerializeField] Transform playerPos;
+    Checkpoint checkpoint;
+
+    private void Start()
+    {
+        checkpoint = GetComponent<Checkpoint>();
+    }
 
     private void Update()
     {
@@ -22,7 +27,7 @@ public class SaveManager : MonoBehaviour
     {
         Debug.Log("Saved");
         SaveData data = new SaveData();
-        data.playerPos = playerPos;
+        data.playerPos = checkpoint.ContinuePos;
         string jsonText = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/saveData.json", jsonText);
     }
@@ -33,6 +38,6 @@ public class SaveManager : MonoBehaviour
         string savedData = File.ReadAllText(Application.persistentDataPath + "/saveData.json");
         SaveData data = new SaveData();
         JsonUtility.FromJsonOverwrite(savedData, data);
-        playerPos = data.playerPos;
+        checkpoint.MovePlayerToCheckpoint(data.playerPos);
     }
 }

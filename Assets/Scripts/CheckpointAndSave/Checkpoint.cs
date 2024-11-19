@@ -1,27 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Checkpoint : MonoBehaviour
 {
-    [SerializeField] private bool triggered;
-
+    Vector3 continuePos;
+    public Vector3 ContinuePos => continuePos;
+    CharacterController characterController;
     SaveManager saveManager;
 
-    private void Awake()
+    private void Start()
     {
-        triggered = false;
-        saveManager = FindObjectOfType<SaveManager>();
+        characterController = GetComponent<CharacterController>();
+        saveManager = GetComponent<SaveManager>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Y)) MovePlayerToCheckpoint(continuePos);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player") Trigger(other);
+        if (other.tag == "Checkpoint")
+        {
+            continuePos = transform.position;
+            saveManager.Save();
+        }
     }
 
-    private void Trigger(Collider collider)
+    public void MovePlayerToCheckpoint(Vector3 position)
     {
-        saveManager.Save();
-        triggered = true;
+        continuePos = position;
+        characterController.enabled = false;
+        transform.position = continuePos;
+        characterController.enabled = true;
     }
 }
