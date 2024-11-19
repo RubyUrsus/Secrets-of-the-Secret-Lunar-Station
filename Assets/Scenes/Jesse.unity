@@ -907,7 +907,8 @@ PrefabInstance:
         type: 3}
       propertyPath: menuCanvas
       value: 
-      objectReference: {fileID: 1774376727}
+      objectReference: {fileID: 5937315979915478425, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
     - target: {fileID: 1427149375490747466, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_Name
@@ -915,8 +916,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5217697364009269701, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217697364009269701, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678775217}
+    - target: {fileID: 5217697364009269701, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnContinueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217697364009269701, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217697364009269701, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306424798160664982, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5937315979915478425, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
@@ -1038,10 +1064,15 @@ PrefabInstance:
       propertyPath: m_text
       value: Continue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 237859831420408462, guid: d8425ed149e47e043a030b0f48dd67fd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5048270790539389733, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1265009225}
   m_SourcePrefab: {fileID: 100100000, guid: d8425ed149e47e043a030b0f48dd67fd, type: 3}
 --- !u!114 &799836414 stripped
 MonoBehaviour:
@@ -1129,6 +1160,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df2030439ea7ef049830706047b03d32, type: 3}
+--- !u!1 &1265009222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5048270790539389733, guid: d8425ed149e47e043a030b0f48dd67fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 799836413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1265009225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265009222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa88db0cf5f1df45ba4870f2c550e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCanvas: {fileID: 1774376727}
 --- !u!1 &1333905448
 GameObject:
   m_ObjectHideFlags: 0
