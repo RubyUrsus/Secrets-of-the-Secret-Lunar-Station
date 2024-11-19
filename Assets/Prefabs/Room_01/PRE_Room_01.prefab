@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 5772372912381244411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.83, z: 16.57}
+  m_LocalPosition: {x: 0, y: 1.83, z: 19.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helmetPrefab: {fileID: 1303210776793515274, guid: 3e4612bf86172e843b25a6ccdc05ac05,
     type: 3}
-  moveSpeed: 1
+  moveSpeed: 1.5
   targetPosition: {fileID: 2320729036877244312}
 --- !u!1 &7329135086029057736
 GameObject:
