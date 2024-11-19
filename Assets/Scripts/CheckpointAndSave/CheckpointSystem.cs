@@ -17,11 +17,6 @@ public class CheckpointSystem : MonoBehaviour
         saveManager = GetComponent<SaveManager>();
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Y)) MovePlayerToCheckpoint(continuePos);
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Checkpoint")

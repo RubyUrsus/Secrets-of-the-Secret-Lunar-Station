@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour /* , IOnInventoryChange */
+public class SaveManager : MonoBehaviour
 {
     private class SaveData
     {
         public Vector3 playerPos;
-        public GlobalFloat playerHealth;
+        public float playerHealth;
         public int undoCharges;
         public bool hasGun;
         public bool hasHelmet;
@@ -21,19 +21,6 @@ public class SaveManager : MonoBehaviour /* , IOnInventoryChange */
     Inventory inventory;
     UndoMovement undoMovement;
 
-    //private void Awake()
-    //{
-    //    inventory = GetComponent<Inventory>();
-    //}
-    //private void OnEnable()
-    //{
-    //    inventory.AddInventoryListener(this);
-    //}
-    //private void OnDisable()
-    //{
-    //    inventory.RemoveInventoryListener(this);
-    //}
-
     private void Start()
     {
         checkpointSystem = GetComponent<CheckpointSystem>();
@@ -44,6 +31,8 @@ public class SaveManager : MonoBehaviour /* , IOnInventoryChange */
         {
             Debug.LogWarning("Drag and drop Scriptable object 'playerHealth' to SaveManager script on the player");
         }
+
+        if (PlayerPrefs.GetInt("LoadGame") == 1) Load();
     }
 
     private void Update()
@@ -52,17 +41,12 @@ public class SaveManager : MonoBehaviour /* , IOnInventoryChange */
         if (Input.GetKeyDown(KeyCode.P)) Load();
     }
 
-    //public void OnInventoryChange(Inventory inventory)
-    //{
-    //    throw new System.NotImplementedException();
-    //}
-
     public void Save()
     {
         Debug.Log("Saved");
         SaveData data = new SaveData();
         data.playerPos = checkpointSystem.ContinuePos;
-        data.playerHealth = playerHealth;
+        data.playerHealth = playerHealth.currentHealth;
         data.hasGun = inventory.HasGun;
         data.hasHelmet = inventory.HasHelmet;
         data.hasKey = inventory.HasKey;
@@ -79,13 +63,11 @@ public class SaveManager : MonoBehaviour /* , IOnInventoryChange */
         SaveData data = new SaveData();
         JsonUtility.FromJsonOverwrite(savedData, data);
         checkpointSystem.MovePlayerToCheckpoint(data.playerPos);
-        playerHealth = data.playerHealth;
+        playerHealth.currentHealth = data.playerHealth;
         inventory.HasGun = data.hasGun;
         inventory.HasHelmet = data.hasHelmet;
         inventory.HasKey = data.hasKey;
         inventory.HasUndo = data.hasUndo;
         undoMovement.UndoCharges = data.undoCharges;
     }
-
-
 }

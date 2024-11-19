@@ -12,12 +12,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Start()
     {
+        playerHealth.currentHealth = playerHealth.maxHealth;
         saveManager = GetComponent<SaveManager>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V)) playerHealth.currentHealth = playerHealth.maxHealth;
+        //if (Input.GetKeyDown(KeyCode.V)) playerHealth.currentHealth = playerHealth.maxHealth;
         if (Input.GetKeyDown(KeyCode.K)) playerHealth.currentHealth = 0;
 
         if (playerHealth.currentHealth <= 0)
