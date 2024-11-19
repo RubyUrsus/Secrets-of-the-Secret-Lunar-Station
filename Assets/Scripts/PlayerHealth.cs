@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] GlobalFloat playerHealth;
 
@@ -32,5 +32,11 @@ public class PlayerHealth : MonoBehaviour
         {
             playerHealth.currentHealth -= 20;
         }
+    }
+
+    public void TakeDamagee(float damageAmount)
+    {
+        //throw new System.NotImplementedException();
+        playerHealth.currentHealth -= 20;
     }
 }
