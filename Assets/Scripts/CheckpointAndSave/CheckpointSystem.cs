@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Checkpoint : MonoBehaviour
+public class CheckpointSystem : MonoBehaviour
 {
     Vector3 continuePos;
     public Vector3 ContinuePos => continuePos;
@@ -17,10 +17,10 @@ public class Checkpoint : MonoBehaviour
         saveManager = GetComponent<SaveManager>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Y)) MovePlayerToCheckpoint(continuePos);
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Y)) MovePlayerToCheckpoint(continuePos);
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

@@ -17,6 +17,7 @@ public class UndoMovement : MonoBehaviour, IOnInventoryChange
     Vector3 lastUndo;
     [SerializeField]
     int undoCharges = 1;
+    public int UndoCharges { get { return undoCharges; } set { undoCharges = value; } }
     bool undoUsed;
     [SerializeField]
     Vector3 startPos;
