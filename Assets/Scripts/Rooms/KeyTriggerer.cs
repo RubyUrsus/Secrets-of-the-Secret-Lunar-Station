@@ -32,7 +32,7 @@ public class KeyTriggerer : MonoBehaviour
             }
         }
 
-        if (allEnemiesDead && keyTriggered)
+        if (allEnemiesDead && keyTriggered && keyPrefab != null)
         {
             keyPrefab.SetActive(true);
         }
