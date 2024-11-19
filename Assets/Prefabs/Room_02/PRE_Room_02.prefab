@@ -3166,12 +3166,12 @@ PrefabInstance:
     - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
         type: 3}
       propertyPath: spawnTimeMax
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
         type: 3}
       propertyPath: spawnTimeMin
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
         type: 3}
@@ -4841,7 +4841,7 @@ PrefabInstance:
     - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
         type: 3}
       propertyPath: spawnTimeMin
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
         type: 3}
@@ -8569,7 +8569,7 @@ PrefabInstance:
     - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
         type: 3}
       propertyPath: spawnTimeMin
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
         type: 3}

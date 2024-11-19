@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 3858364168276755496}
   - component: {fileID: 1681548836764752013}
   - component: {fileID: 1691325112419665913}
+  - component: {fileID: 164832055982277996}
   m_Layer: 0
   m_Name: DoorClosedTrigger
   m_TagString: Untagged
@@ -207,6 +208,27 @@ MonoBehaviour:
   closeDoor1: {fileID: 5430266164463119444}
   closeDoor2: {fileID: 4247383844464924422}
   openDoor1: {fileID: 4013709499612277368}
+--- !u!65 &164832055982277996
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329135086029057736}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.21713018, y: 4.393257, z: 4.330348}
+  m_Center: {x: -2.6369941, y: 1.696629, z: 0.18015909}
 --- !u!1001 &2164385750964526784
 PrefabInstance:
   m_ObjectHideFlags: 0
