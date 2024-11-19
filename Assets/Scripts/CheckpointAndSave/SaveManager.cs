@@ -32,7 +32,7 @@ public class SaveManager : MonoBehaviour
             Debug.LogWarning("Drag and drop Scriptable object 'playerHealth' to SaveManager script on the player");
         }
 
-        if (PlayerPrefs.GetInt("LoadGame") == 1) Load();
+        if (PlayerPrefs.GetInt("LoadGame") != 0) Load();
     }
 
     private void Update()

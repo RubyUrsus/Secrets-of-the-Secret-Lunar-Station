@@ -345,6 +345,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6995793736260659264, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLoadGameButton
+      objectReference: {fileID: 0}
     - target: {fileID: 7604314906545071636, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_Pivot.x
