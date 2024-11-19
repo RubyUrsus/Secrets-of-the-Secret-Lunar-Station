@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
+        SoundManager.Instance.PlayMonsterDamageSound();
         health -= damage;
         if (health < 0)
         {

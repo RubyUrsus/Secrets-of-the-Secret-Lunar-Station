@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter(Collision collision)
     {
+        SoundManager.Instance.PlayHumanDamageSound();
         if (collision.gameObject.tag == "Damage")
         {
             playerHealth.currentHealth -= 20;

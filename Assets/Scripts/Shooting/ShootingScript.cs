@@ -80,8 +80,10 @@ public class ShootingScript : MonoBehaviour
             shotsFired++;
 
             // Start cooldown if 100 shots have been fired
+            
             if (shotsFired >= 100)
             {
+                SoundManager.Instance.PlayOverHeatSound();
                 canShoot = false;
                 cooldownStartTime = Time.time; // Start the cooldown timer
             }
@@ -100,6 +102,7 @@ public class ShootingScript : MonoBehaviour
 
     void Shoot()
     {
+        SoundManager.Instance.PlayGunShotSound();
         // Instantiate the bullet at the fire point
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Vector3 direction = firePoint.forward;
@@ -126,7 +129,7 @@ public class ShootingScript : MonoBehaviour
         {
             rb.velocity = firePoint.forward * bulletSpeed;
             // Optional: Destroy bullet after 1 second to prevent memory overload
-            Destroy(bullet, 0.2f);
+            Destroy(bullet, 0.1f);
         }
         
     }
