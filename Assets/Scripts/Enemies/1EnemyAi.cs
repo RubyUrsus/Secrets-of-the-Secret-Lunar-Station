@@ -20,6 +20,7 @@ public class NewBehaviour : MonoBehaviour
     NavMeshAgent agent;
     //[SerializeField]
     EnemyHealth enemyhealth;
+    
 
     private CalculateVelocity calculateVelocity;
 
@@ -73,10 +74,14 @@ public class NewBehaviour : MonoBehaviour
             {
                 animator.SetTrigger("Attacks");
                 //playerHealth.currentHealth -= 20;
-                //damageable.TakeDamage(damage);
+                damageable.TakeDamagee(damage);
                 //if possible reset movement Velocity
 
             }
         }
+    }
+    private void OnDisable()
+    {
+        agent.isStopped = true;
     }
 }

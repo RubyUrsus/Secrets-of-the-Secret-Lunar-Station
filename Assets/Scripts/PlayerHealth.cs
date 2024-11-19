@@ -37,6 +37,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void TakeDamagee(float damageAmount)
     {
         //throw new System.NotImplementedException();
-        
+        playerHealth.currentHealth -= 20;
     }
 }

@@ -1054,8 +1054,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3124672588894225385, guid: 430a4a3e01f4dbc4a8e9108a2833c796,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1789167259}
   m_SourcePrefab: {fileID: 100100000, guid: 430a4a3e01f4dbc4a8e9108a2833c796, type: 3}
+--- !u!1 &1789167250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3124672588894225385, guid: 430a4a3e01f4dbc4a8e9108a2833c796,
+    type: 3}
+  m_PrefabInstance: {fileID: 1545427745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1789167259
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789167250}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1954969461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1132,6 +1169,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
+        type: 3}
+      propertyPath: spawnTimeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864232571944423723, guid: 38779be2245baac4cb18a8ed48023afb,
+        type: 3}
+      propertyPath: spawnTimeMin
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3357128888376062752, guid: 38779be2245baac4cb18a8ed48023afb,
         type: 3}
       propertyPath: m_LocalPosition.x
