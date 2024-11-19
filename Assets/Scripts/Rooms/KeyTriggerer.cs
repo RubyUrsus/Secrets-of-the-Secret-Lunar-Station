@@ -8,6 +8,7 @@ public class KeyTriggerer : MonoBehaviour
     [SerializeField] bool keyTriggered;
     [SerializeField] bool allEnemiesDead;
     [SerializeField] GameObject keyPrefab;
+    float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,15 @@ public class KeyTriggerer : MonoBehaviour
 
         if (keyTriggered)
         {
-            CheckIfAllEnemiesDefeated();
+            timer += Time.deltaTime;
+            if (timer > 1)
+            {
+                CheckIfAllEnemiesDefeated();
+                timer = 0;
+            }
         }
 
-        if (keyTriggered && allEnemiesDead)
+        if (allEnemiesDead && keyTriggered)
         {
             keyPrefab.SetActive(true);
         }
@@ -34,7 +40,11 @@ public class KeyTriggerer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        keyTriggered = true;
+        if (other.gameObject == Camera.main.transform.root.gameObject)
+        {
+            keyTriggered = true;
+        }
+
     }
 
 
