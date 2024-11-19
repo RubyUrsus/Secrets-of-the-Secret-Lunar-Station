@@ -26,12 +26,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     void KillEntity()
     {
         //GameManager.Instance.TrackEnemies();
-        animator.SetTrigger("Death");
+        //animator.SetTrigger("Death");
         isDead = true;
         Debug.Log("Killed an enemy");
     }
 
-    public void TakeDamage(float damageAmount)
+    public void TakeDamagee(float damageAmount)
     {
         enemyHealth -= damageAmount;
         Debug.Log("took damage" + enemyHealth);

@@ -9,12 +9,15 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     float health = 5;
     Animator animator;
+    NewBehaviour enemyAI;
+
 
     Rigidbody rb;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        enemyAI = GetComponentInChildren<NewBehaviour>();
     }
     public void TakeDamage(float damage)
     {
@@ -22,16 +25,18 @@ public class Enemy : MonoBehaviour
         if (health < 0)
         {
             animator.SetTrigger("IsStopped");
-            Destroy(gameObject);
+            Destroy(gameObject,5);
+            enemyAI.enabled = false;
         }
     }
 
     public void TakeDamage(float damage, Vector3 impactPoint, Vector3 impactDirections)
     {
-        if (rb != null)
+        //if (rb != null)
         {
-            rb.AddForceAtPosition(impactDirections * 3, impactPoint, ForceMode.Impulse);
-            animator.SetTrigger("TakeDamage");
+            //rb.AddForceAtPosition(impactDirections * 3, impactPoint, ForceMode.Impulse);
+            //animator.SetTrigger("TakeDamage");
+            //Debug.Log("Takes Damage");
         }
         TakeDamage(damage);
     }

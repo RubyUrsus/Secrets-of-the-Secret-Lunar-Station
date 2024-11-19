@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] GlobalFloat playerHealth;
 
@@ -26,11 +26,17 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Dead");
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Damage")
-    //    {
-    //        playerHealth.currentHealth -= 20;
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Damage")
+        {
+            playerHealth.currentHealth -= 20;
+        }
+    }
+
+    public void TakeDamagee(float damageAmount)
+    {
+        //throw new System.NotImplementedException();
+        playerHealth.currentHealth -= 20;
+    }
 }

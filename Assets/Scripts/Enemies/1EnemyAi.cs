@@ -20,6 +20,7 @@ public class NewBehaviour : MonoBehaviour
     NavMeshAgent agent;
     //[SerializeField]
     EnemyHealth enemyhealth;
+    
 
     private CalculateVelocity calculateVelocity;
 
@@ -69,11 +70,18 @@ public class NewBehaviour : MonoBehaviour
             attackCoolDown = maxAttackCoolDown;
             Debug.Log("Kutsuu");
             IDamageable damageable = other.GetComponent<IDamageable>();
-            if (damageable != null)
+            //if (damageable != null)
             {
                 animator.SetTrigger("Attacks");
-                damageable.TakeDamage(damage);
+                //playerHealth.currentHealth -= 20;
+                damageable.TakeDamagee(damage);
+                //if possible reset movement Velocity
+
             }
         }
+    }
+    private void OnDisable()
+    {
+        agent.isStopped = true;
     }
 }
