@@ -8,10 +8,12 @@ public class PickUpKeyCard : MonoBehaviour, IInteractable
     string setUIText;
     public string UIText => setUIText;
     Inventory inventory;
+    [SerializeField] Door01Controller controlDoor;
 
     public void Interact()
     {
         inventory.SetKeyBool();
+        controlDoor.Interact();
         Destroy(gameObject);
     }
 
