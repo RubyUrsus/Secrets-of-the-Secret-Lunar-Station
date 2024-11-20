@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject menuCanvas;
     [SerializeField] Button ContinueButton;
+    [SerializeField] MouseLook mouseLook;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         menuCanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        mouseLook.enabled = false;
     }
 
     public void OnContinueButton()
@@ -31,6 +33,7 @@ public class PauseMenu : MonoBehaviour
 
         menuCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        mouseLook.enabled = true;
     }
 
     IEnumerator PressDelay()
