@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
+    // Particle effect prefab for overheat
+    public GameObject OverheatedSmoke;
     // Particle effect prefab for hits 
     public GameObject hitEffectPrefab;           
     // Reference to the bullet prefab
     public GameObject bulletPrefab;
+    
 
     // Point where the bullet will spawn
     public Transform firePoint;
@@ -85,6 +88,10 @@ public class ShootingScript : MonoBehaviour
             
             if (shotsFired >= 100)
             {
+                GameObject OverheatedSmoke = Instantiate(this.OverheatedSmoke, firePoint.position, firePoint.rotation);
+                OverheatedSmoke.transform.SetParent(firePoint, false);
+                OverheatedSmoke.transform.position = firePoint.position;
+                OverheatedSmoke.transform.rotation = firePoint.rotation;    
                 SoundManager.Instance.PlayOverHeatSound();
                 canShoot = false;
                 cooldownStartTime = Time.time; // Start the cooldown timer
@@ -124,6 +131,7 @@ public class ShootingScript : MonoBehaviour
                 if (hitEffectPrefab != null)
                 {
                     Instantiate(hitEffectPrefab, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                    Debug.Log("Instantiate osuma");
                 }
 
             }
