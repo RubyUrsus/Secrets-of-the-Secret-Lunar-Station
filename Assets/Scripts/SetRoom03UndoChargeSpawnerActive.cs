@@ -9,11 +9,14 @@ public class SetRoom03UndoChargeSpawnerActive : MonoBehaviour
     [SerializeField]
     AutoSpawnCharge autoSpawnChargePuzzle02;
 
+    UndoMovement undoMovement;
+
     // Start is called before the first frame update
     void Start()
     {
         autoSpawnChargePuzzle01.enabled = true;
         autoSpawnChargePuzzle02.enabled = false;
+        undoMovement = FindAnyObjectByType<UndoMovement>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +32,9 @@ public class SetRoom03UndoChargeSpawnerActive : MonoBehaviour
                 Destroy(powerUp);
             }
             autoSpawnChargePuzzle02.enabled = true;
+            undoMovement.ClearStack();
+            undoMovement.PushCurrent();
+            undoMovement.PushCurrent();
         }
     }
 }

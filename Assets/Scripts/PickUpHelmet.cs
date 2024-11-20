@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpHelmet : MonoBehaviour
+public class PickUpHelmet : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    Door01Controller doorController;
+    Inventory inventory;
+    public string UIText => "Pick up helmet";
+
+    private void Start()
     {
-        
+        inventory = FindAnyObjectByType<Inventory>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        
+        doorController.Interact();
+        inventory.SethelmetBool();
+        Destroy(gameObject);
     }
+
 }
