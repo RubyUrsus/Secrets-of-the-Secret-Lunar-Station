@@ -13,6 +13,12 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void OnLoadGameButton()
+    {
+        PlayerPrefs.SetInt("LoadGame", 1);
+        SceneManager.LoadScene(2);
+    }
+
     public void OnQuitButton()
     {
         Application.Quit();

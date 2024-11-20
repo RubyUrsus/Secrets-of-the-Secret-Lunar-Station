@@ -4,6 +4,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] GlobalFloat playerHealth;
     [SerializeField] GameObject deathScreen;
+    [SerializeField] GameObject pauseMenuEmpty;
 
     SaveManager saveManager;
 
@@ -16,14 +17,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.V)) playerHealth.currentHealth = playerHealth.maxHealth;
-        if (Input.GetKeyDown(KeyCode.K)) playerHealth.currentHealth = 0;
-
         if (playerHealth.currentHealth <= 0)
         {
             Death();
         }
-
     }
 
     private void Death()
@@ -31,8 +28,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         deathScreen.SetActive(true);
-        //saveManager.Load();
-        //playerHealth.currentHealth = playerHealth.maxHealth;
+        pauseMenuEmpty.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)

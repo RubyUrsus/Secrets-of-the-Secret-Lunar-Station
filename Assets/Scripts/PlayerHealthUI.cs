@@ -17,7 +17,6 @@ public class PlayerHealthUI : MonoBehaviour
 
     void Update()
     {
-
         if (playerHealth.currentHealth == playerHealth.maxHealth)
         {
             healthBar.sprite = healthBarSprites[0];
@@ -42,6 +41,5 @@ public class PlayerHealthUI : MonoBehaviour
         {
             healthBar.sprite = healthBarSprites[4];
         }
-
     }
 }

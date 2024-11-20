@@ -45,11 +45,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void OnMainMenuButton()
-    {
-        SceneManager.LoadScene(0);
-    }
-
     IEnumerator PressDelay()
     {
         yield return new WaitForSecondsRealtime(0.2f);
