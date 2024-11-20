@@ -102,7 +102,7 @@ public class ShootingScript : MonoBehaviour
 
     void Shoot()
     {
-        //SoundManager.Instance.PlayGunShotSound();
+        SoundManager.Instance.PlayGunShotSound();
         // Instantiate the bullet at the fire point
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Vector3 direction = firePoint.forward;
