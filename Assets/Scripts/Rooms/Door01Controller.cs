@@ -15,6 +15,7 @@ public class Door01Controller : MonoBehaviour    /* , IInteractable*/
     public float smoothTime = 0.2f;   // Aika, jonka vetolaatikon liike kestää
     [SerializeField]
     private bool open = false;      // Tarkistus, onko vetolaatikko auki vai kiinni
+    public bool Open => open;
 
 
     private void Start()

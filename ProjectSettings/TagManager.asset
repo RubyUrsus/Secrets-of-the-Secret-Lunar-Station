@@ -12,6 +12,8 @@ TagManager:
   - DoorTrigger
   - Weapon
   - Checkpoint
+  - PowerUp
+  - PuzzleDoorTrigger
   layers:
   - Default
   - TransparentFX
