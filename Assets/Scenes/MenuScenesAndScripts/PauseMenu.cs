@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject menuCanvas;
     [SerializeField] Button ContinueButton;
     [SerializeField] MouseLook mouseLook;
+    SaveManager saveManager;
 
     void Start()
     {

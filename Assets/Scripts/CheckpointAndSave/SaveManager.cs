@@ -8,6 +8,7 @@ public class SaveManager : MonoBehaviour
     private class SaveData
     {
         public Vector3 playerPos;
+        public Quaternion playerRotation;
         public float playerHealth;
         public int undoCharges;
         public bool hasGun;
@@ -46,6 +47,7 @@ public class SaveManager : MonoBehaviour
         Debug.Log("Saved");
         SaveData data = new SaveData();
         data.playerPos = checkpointSystem.ContinuePos;
+        data.playerRotation = transform.rotation;
         data.playerHealth = playerHealth.currentHealth;
         data.hasGun = inventory.HasGun;
         data.hasHelmet = inventory.HasHelmet;
@@ -63,6 +65,7 @@ public class SaveManager : MonoBehaviour
         SaveData data = new SaveData();
         JsonUtility.FromJsonOverwrite(savedData, data);
         checkpointSystem.MovePlayerToCheckpoint(data.playerPos);
+        transform.rotation = data.playerRotation;
         playerHealth.currentHealth = data.playerHealth;
         inventory.HasGun = data.hasGun;
         inventory.HasHelmet = data.hasHelmet;
