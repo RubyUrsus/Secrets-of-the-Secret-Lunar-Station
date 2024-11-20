@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 5794424057126043490}
   - component: {fileID: 2497865338326709330}
   - component: {fileID: 7715021526343741384}
+  - component: {fileID: 1617979711774956056}
   m_Layer: 0
   m_Name: PRE_Player
   m_TagString: Player
@@ -274,6 +275,21 @@ MonoBehaviour:
   movementThreshold: 0.1
   speed: 0
 --- !u!114 &7715021526343741384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694349963114911687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845ba7a2ad5eb6e42990d3daa41eec9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
+  velocitySmoothed: {x: 0, y: 0, z: 0}
+  smoothVel: {x: 0, y: 0, z: 0}
+--- !u!114 &1617979711774956056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
