@@ -11,7 +11,7 @@ public class CheckpointSystem : MonoBehaviour
     CharacterController characterController;
     SaveManager saveManager;
 
-    private void Start()
+    private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         saveManager = GetComponent<SaveManager>();
@@ -21,6 +21,7 @@ public class CheckpointSystem : MonoBehaviour
     {
         if (other.tag == "Checkpoint")
         {
+            Debug.Log("checkpoint");
             continuePos = transform.position;
             saveManager.Save();
         }
