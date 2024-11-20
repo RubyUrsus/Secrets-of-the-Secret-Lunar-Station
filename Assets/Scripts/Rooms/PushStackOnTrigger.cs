@@ -22,8 +22,7 @@ public class PushStackOnTrigger : MonoBehaviour
     {
         if (other.gameObject == Camera.main.transform.root.gameObject)
         {
-            //undoMovement.PushCurrent
+            undoMovement.PushCurrent();
         }
-        gameObject.SetActive(false);
     }
 }
