@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
+    // Particle effect prefab for hits 
+    public GameObject hitEffectPrefab;           
     // Reference to the bullet prefab
     public GameObject bulletPrefab;
 
@@ -117,10 +119,17 @@ public class ShootingScript : MonoBehaviour
             {
                 // Apply damage to the enemy
                 enemy.TakeDamage(1, hitInfo.point, direction); // Using the impact overload to apply force
-                
+
+                // Instantiate particle effect at the point of impact
+                if (hitEffectPrefab != null)
+                {
+                    Instantiate(hitEffectPrefab, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                }
+
             }
 
-
+            // Debug visualization
+            Debug.DrawRay(firePoint.position, direction * hitInfo.distance, Color.green, 1.0f);
 
         }
 

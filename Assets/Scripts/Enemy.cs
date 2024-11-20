@@ -25,9 +25,13 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health < 0)
         {
-            animator.SetTrigger("IsStopped");
-            Destroy(gameObject,5);
-            enemyAI.enabled = false;
+            if (animator != null)
+            {
+                animator.SetTrigger("IsStopped");
+                Destroy(gameObject, 5);
+                enemyAI.enabled = false;
+            }
+            
         }
     }
 
