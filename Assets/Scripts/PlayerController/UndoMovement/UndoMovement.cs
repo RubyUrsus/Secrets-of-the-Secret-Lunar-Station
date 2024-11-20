@@ -17,6 +17,7 @@ public class UndoMovement : MonoBehaviour, IOnInventoryChange
     Vector3 lastUndo;
     [SerializeField]
     int undoCharges = 1;
+    public int UndoCharges { get { return undoCharges; } set { undoCharges = value; SetObserverCharges(value, false); } }
     bool undoUsed;
     [SerializeField]
     Vector3 startPos;
@@ -134,6 +135,10 @@ public class UndoMovement : MonoBehaviour, IOnInventoryChange
         undoStack.Push(startPos);
     }
 
+    public void PushCurrent()
+    {
+        undoStack.Push(transform.position);
+    }
 
     public void OnUndoPickUp()
     {

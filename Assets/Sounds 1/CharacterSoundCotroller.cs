@@ -27,7 +27,7 @@ public class CharacterSoundController : MonoBehaviour
         speed = GetMovementSpeed(); // Get the character's movement speed
 
         // Debug speed value (for troubleshooting)
-        Debug.Log($"Speed: {speed}");
+        //Debug.Log($"Speed: {speed}");
 
         // Only adjust the timer if speed is above the threshold
         if (speed > movementThreshold)
