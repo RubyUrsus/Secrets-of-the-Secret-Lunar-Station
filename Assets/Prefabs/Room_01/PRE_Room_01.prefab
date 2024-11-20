@@ -203,8 +203,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1198349, y: 4.748045, z: 8.563129}
-  m_Center: {x: 0.44008255, y: 1.8740234, z: 0.11297417}
+  m_Size: {x: 0.3314209, y: 4.748045, z: 8.563129}
+  m_Center: {x: 0.03343582, y: 1.8740234, z: 0.11297417}
 --- !u!114 &5503951625133207527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorToClose: {fileID: 5108435691127407376}
+  resetUndo: 0
+  killAllPowerUps: 0
 --- !u!1 &4844679058577249447
 GameObject:
   m_ObjectHideFlags: 0
