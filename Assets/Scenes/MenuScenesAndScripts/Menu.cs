@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject menuCanvas;
 
-    public void OnPlayButton()
+    public void OnNewGameButton()
     {
         PlayerPrefs.SetInt("LoadGame", 0);
         SceneManager.LoadScene(2);
