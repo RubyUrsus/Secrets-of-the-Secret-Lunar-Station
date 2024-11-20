@@ -273,11 +273,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_PauseMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 884327299868132515, guid: 90b39fdf5af363a4399c2fc479c387fb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1605721871595960575, guid: 90b39fdf5af363a4399c2fc479c387fb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -387,17 +382,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1975460113}
-    - target: {fileID: 4554927876234209658, guid: 90b39fdf5af363a4399c2fc479c387fb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnLoadGameButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 4554927876234209658, guid: 90b39fdf5af363a4399c2fc479c387fb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Menu, Assembly-CSharp
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 425767498}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -699,6 +684,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6132798725161407603, guid: 7fb8f1c2975157b40955d4b88818da20,
+        type: 3}
+      propertyPath: healthBarSprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132798725161407603, guid: 7fb8f1c2975157b40955d4b88818da20,
+        type: 3}
+      propertyPath: healthBarSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c0f4330cf0a6c24191b29e0f0b51bb2,
+        type: 3}
+    - target: {fileID: 6132798725161407603, guid: 7fb8f1c2975157b40955d4b88818da20,
+        type: 3}
+      propertyPath: healthBarSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 58b260c0df6e54e45ab2475a2c10d53d,
+        type: 3}
+    - target: {fileID: 6132798725161407603, guid: 7fb8f1c2975157b40955d4b88818da20,
+        type: 3}
+      propertyPath: healthBarSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fdba29370e3ea540b97da36f6b93f0c,
+        type: 3}
+    - target: {fileID: 6132798725161407603, guid: 7fb8f1c2975157b40955d4b88818da20,
+        type: 3}
+      propertyPath: healthBarSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6cccbea766d33804c8ba6f3485dbbf99,
+        type: 3}
+    - target: {fileID: 6132798725161407603, guid: 7fb8f1c2975157b40955d4b88818da20,
+        type: 3}
+      propertyPath: healthBarSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: f0cd9aefbbaec904c9e486962d7ad27e,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1195,18 +1215,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1975460113 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3914630233883403992, guid: 90b39fdf5af363a4399c2fc479c387fb,
-    type: 3}
-  m_PrefabInstance: {fileID: 108264245}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa88db0cf5f1df45ba4870f2c550e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2116991209 stripped

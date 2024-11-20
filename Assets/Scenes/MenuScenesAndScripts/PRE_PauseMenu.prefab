@@ -492,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 6995793736260659264, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnLoadCheckpointButton
+      value: OnLoadGameButton
       objectReference: {fileID: 0}
     - target: {fileID: 6995793736260659264, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
