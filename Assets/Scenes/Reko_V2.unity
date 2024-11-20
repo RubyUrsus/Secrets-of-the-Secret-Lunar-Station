@@ -849,17 +849,17 @@ PrefabInstance:
     - target: {fileID: 6312783126150180608, guid: 4bcfbd814e1e8274ca41492bc7286591,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 55.8
       objectReference: {fileID: 0}
     - target: {fileID: 6312783126150180608, guid: 4bcfbd814e1e8274ca41492bc7286591,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9263378
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 6312783126150180608, guid: 4bcfbd814e1e8274ca41492bc7286591,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 6312783126150180608, guid: 4bcfbd814e1e8274ca41492bc7286591,
         type: 3}
@@ -899,7 +899,7 @@ PrefabInstance:
     - target: {fileID: 6775654868099174415, guid: 4bcfbd814e1e8274ca41492bc7286591,
         type: 3}
       propertyPath: hasGun
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6775654868099174415, guid: 4bcfbd814e1e8274ca41492bc7286591,
         type: 3}
@@ -909,12 +909,12 @@ PrefabInstance:
     - target: {fileID: 6775654868099174415, guid: 4bcfbd814e1e8274ca41492bc7286591,
         type: 3}
       propertyPath: hasUndo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6775654868099174415, guid: 4bcfbd814e1e8274ca41492bc7286591,
         type: 3}
       propertyPath: hasHelmet
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
