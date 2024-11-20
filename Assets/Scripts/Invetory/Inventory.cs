@@ -10,19 +10,19 @@ public class Inventory : MonoBehaviour
 
 
     [SerializeField] private bool hasGun;
-    public bool HasGun => hasGun;
+    public bool HasGun { get { return hasGun; } set { hasGun = value; NotifyObservers(); } }
 
 
     [SerializeField] private bool hasHelmet;
-    public bool HasHelmet => hasHelmet;
+    public bool HasHelmet { get { return hasHelmet; } set { hasHelmet = value; NotifyObservers(); } }
 
 
     [SerializeField] private bool hasKey;
-    public bool HasKey => hasKey;
+    public bool HasKey { get { return hasKey; } set { hasKey = value; NotifyObservers(); } }
 
 
     [SerializeField] private bool hasUndo;
-    public bool HasUndo => hasUndo;
+    public bool HasUndo { get { return hasUndo; } set { hasUndo = value; NotifyObservers(); } }
 
     private void Start()
     {
