@@ -135,6 +135,10 @@ public class UndoMovement : MonoBehaviour, IOnInventoryChange
         undoStack.Push(startPos);
     }
 
+    public void PushCurrent()
+    {
+        undoStack.Push(transform.position);
+    }
 
     public void OnUndoPickUp()
     {
