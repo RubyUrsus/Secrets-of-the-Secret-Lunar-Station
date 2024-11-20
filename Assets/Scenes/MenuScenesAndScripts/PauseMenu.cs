@@ -38,6 +38,18 @@ public class PauseMenu : MonoBehaviour
         mouseLook.enabled = true;
     }
 
+    public void OnLoadGameButton()
+    {
+        PlayerPrefs.SetInt("LoadGame", 1);
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1;
+    }
+
+    public void OnMainMenuButton()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     IEnumerator PressDelay()
     {
         yield return new WaitForSecondsRealtime(0.2f);

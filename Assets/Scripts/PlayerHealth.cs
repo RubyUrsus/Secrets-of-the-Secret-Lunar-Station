@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] GlobalFloat playerHealth;
+    [SerializeField] GameObject deathScreen;
 
     SaveManager saveManager;
+
 
     private void Start()
     {
@@ -25,12 +23,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         {
             Death();
         }
+
     }
 
     private void Death()
     {
-        saveManager.Load();
-        playerHealth.currentHealth = playerHealth.maxHealth;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        deathScreen.SetActive(true);
+        //saveManager.Load();
+        //playerHealth.currentHealth = playerHealth.maxHealth;
     }
 
     private void OnCollisionEnter(Collision collision)
