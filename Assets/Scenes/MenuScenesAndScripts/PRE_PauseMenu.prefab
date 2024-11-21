@@ -399,6 +399,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadCheckpointText
       objectReference: {fileID: 0}
+    - target: {fileID: 4740258731248845410, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -8.014803
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740258731248845410, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.0074012
+      objectReference: {fileID: 0}
     - target: {fileID: 5048270790539389733, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_IsActive
@@ -482,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 5937315979915478425, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6995793736260659264, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
@@ -639,6 +649,16 @@ PrefabInstance:
       propertyPath: m_text
       value: Continue
       objectReference: {fileID: 0}
+    - target: {fileID: 7831337039937087640, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7831337039937087640, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 8250977131516093158, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_IsActive
@@ -652,12 +672,12 @@ PrefabInstance:
     - target: {fileID: 8865710670032257776, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8865710670032257776, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 24
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8885221539588088605, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
