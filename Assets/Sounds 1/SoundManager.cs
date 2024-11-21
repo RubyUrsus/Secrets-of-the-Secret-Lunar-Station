@@ -101,12 +101,20 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // Update the background music volume
+    // Background music volume
     public void SetBackgroundVolume(float volume)
     {
         if (backgroundSource != null)
         {
             backgroundSource.volume = volume; // Dynamically adjust the volume
+        }
+    }
+    // Stop background music
+    public void StopBackgroundMusic()
+    {
+        if (backgroundSource != null && backgroundSource.isPlaying)
+        {
+            backgroundSource.Stop();
         }
     }
 

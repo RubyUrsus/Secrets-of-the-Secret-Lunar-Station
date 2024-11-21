@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Death()
     {
+        SoundManager.Instance.StopBackgroundMusic();
         SoundManager.Instance.PlayDeathSound();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
