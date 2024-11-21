@@ -31,6 +31,7 @@ public class ChargeUndo : MonoBehaviour
     {
         if (other.gameObject == Camera.main.transform.root.gameObject)
         {
+            SoundManager.Instance.PlayCollectibleSound();
             undoMovement.AddUndoCharge();
             Destroy(gameObject);
         }
