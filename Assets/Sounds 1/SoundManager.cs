@@ -10,8 +10,10 @@ public class SoundManager : MonoBehaviour
     [Header("Human Sounds")]
     public AudioClip[] humanStepSounds;
     public AudioClip humanDamageSound;
+
+    [Header("Human deathsound")]
     public AudioClip deathSound;
-    [Range(0f, 1f)] public float humanVolume = 1f; // Volume for Human Sounds
+    [Range(0f, 1f)] public float humanVolume = 1f; // Volume for Human death Sounds
 
     [Header("Monster Sounds")]
     public AudioClip[] monsterStepSounds;
