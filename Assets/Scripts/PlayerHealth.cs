@@ -6,21 +6,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] GameObject deathScreen;
     [SerializeField] GameObject pauseMenuEmpty;
 
-    SaveManager saveManager;
-
-
     private void Start()
     {
         playerHealth.currentHealth = playerHealth.maxHealth;
-        saveManager = GetComponent<SaveManager>();
     }
 
     private void Update()
     {
-        if (playerHealth.currentHealth <= 0)
-        {
-            Death();
-        }
+        if (playerHealth.currentHealth <= 0) Death();
     }
 
     private void Death()

@@ -6,39 +6,34 @@ using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField] Slider mouseSensitivitySlider;
-
     [SerializeField]
     Transform camTransform;
     //[SerializeField]
     private float mouseSens = 1f;
+    public float MouseSens { get { return mouseSens; } set { mouseSens = value; } }
     float mouseY;
+
+    [SerializeField] Slider sensitivitySlider;
 
 
     private void Start()
     {
-        mouseSens = PlayerPrefs.GetFloat("currentSensitivity", 100);
-        mouseSensitivitySlider.value = mouseSens / 10;
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        mouseSens = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
+        sensitivitySlider.value = mouseSens;
+
     }
-    // Update is called once per frame
+
     void Update()
     {
-        PlayerPrefs.SetFloat("currentSensitivity", mouseSens);
-
         float mouseX = Input.GetAxis("Mouse X") * mouseSens;
         transform.Rotate(0, mouseX, 0);
 
         mouseY -= Input.GetAxis("Mouse Y") * mouseSens;
         mouseY = Mathf.Clamp(mouseY, -90, 90);
         camTransform.localRotation = Quaternion.Euler(mouseY, 0, 0);
-        
-        
-            
-            
-        
     }
 
     public void ApplyRecoil()
@@ -48,9 +43,10 @@ public class MouseLook : MonoBehaviour
         transform.Rotate(0, mouseX, 0);
     }
 
-    public void AdjustSensitivity(float newSensitivity)
+    public void OnSliderMovement(float value)
     {
-        mouseSens = newSensitivity * 10;
+        mouseSens = value;
+        PlayerPrefs.SetFloat("MouseSensitivity", mouseSens);
     }
 
     //void ApplyRecoil()
