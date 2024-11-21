@@ -799,12 +799,12 @@ GameObject:
   - component: {fileID: 961725621}
   - component: {fileID: 961725620}
   m_Layer: 0
-  m_Name: Checkpoint (1)
-  m_TagString: Checkpoint
+  m_Name: Start
+  m_TagString: Start
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &961725620
 BoxCollider:
   m_ObjectHideFlags: 0
