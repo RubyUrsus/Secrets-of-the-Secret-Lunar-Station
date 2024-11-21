@@ -23,6 +23,7 @@ public class PickUpGun : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        SoundManager.Instance.PlayEquipPickupSound();
         closeDoor1.Interact();
         openDoor1.Interact();
         inventory.SetGunBool();

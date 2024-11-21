@@ -11,6 +11,9 @@ public class SetUndoMovementActive : MonoBehaviour, IInteractable
     string setUIText;
     public string UIText => setUIText;
 
+    [SerializeField]
+    GameObject undoTutorialText;
+
     private void Start()
     {
        
@@ -23,8 +26,11 @@ public class SetUndoMovementActive : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        SoundManager.Instance.PlayEquipPickupSound();
         inventory.SetUndoBool();
         undoMovement.OnUndoPickUp();
         gameObject.SetActive(false);
+        undoTutorialText.SetActive(true);
+
     }
 }

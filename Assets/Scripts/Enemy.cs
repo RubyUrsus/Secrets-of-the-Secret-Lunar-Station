@@ -31,7 +31,9 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject, 5);
                 enemyAI.enabled = false;
             }
-            
+
+            SoundManager.Instance.PlayMonsterDeathSound();
+
         }
     }
 

@@ -7,6 +7,8 @@ public class InventoryUI : MonoBehaviour, IOnInventoryChange
     [SerializeField] GameObject keyUI;
     [SerializeField] GameObject helmetUI;
     [SerializeField] GameObject undoUI;
+    [SerializeField] GameObject healthUI;
+
     private Inventory inventory;
     bool hasHelmet;
     bool hasUndo;
@@ -20,7 +22,6 @@ public class InventoryUI : MonoBehaviour, IOnInventoryChange
 
     public void OnInventoryChange(Inventory inventory)
     {
-        Debug.Log("Kutsu tuli");
         hasHelmet = inventory.HasHelmet;
         hasUndo = inventory.HasUndo;
         hasKey = inventory.HasKey;
@@ -28,11 +29,27 @@ public class InventoryUI : MonoBehaviour, IOnInventoryChange
         if (hasKey) keyUI.SetActive(true);
         else keyUI.SetActive(false);
 
-        if (hasHelmet) helmetUI.SetActive(true);
-        else helmetUI.SetActive(false);
-
         if(hasUndo) undoUI.SetActive(true);
         else undoUI.SetActive(false);
+
+        if (hasHelmet)
+        {
+            helmetUI.SetActive(true);
+            undoUI.SetActive(false);
+            keyUI.SetActive(false);
+            healthUI.SetActive(false);
+        }
+        else
+        {
+            helmetUI.SetActive(false);
+            healthUI.SetActive(true);
+
+            if (hasKey) keyUI.SetActive(true);
+            else keyUI.SetActive(false);
+
+            if (hasUndo) undoUI.SetActive(true);
+            else undoUI.SetActive(false);
+        }
     }
 
     private void OnEnable()

@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 5913501127532742611}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 87.893, y: 6.05, z: 98.504}
+  m_LocalPosition: {x: 87.893, y: 5.45, z: 98.504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -594,7 +594,7 @@ Transform:
   m_GameObject: {fileID: 8927503583060331243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.330002, y: 0, z: -3.9000015}
+  m_LocalPosition: {x: 4.63, y: -12.474569, z: -8.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -671,6 +671,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2754196882966446069}
+    - targetCorrespondingSourceObject: {fileID: 1303210776793515274, guid: 3e4612bf86172e843b25a6ccdc05ac05,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 706684210906932019}
   m_SourcePrefab: {fileID: 100100000, guid: 3e4612bf86172e843b25a6ccdc05ac05, type: 3}
 --- !u!1 &1897400102274370578 stripped
 GameObject:
@@ -690,6 +694,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d760b97601a6e4e9c308874dbb400d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorController: {fileID: 0}
+--- !u!65 &706684210906932019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897400102274370578}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &7840556597156195463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7245804390105261471, guid: 3e4612bf86172e843b25a6ccdc05ac05,

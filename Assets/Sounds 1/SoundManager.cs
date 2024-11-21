@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    
+    
+
     // Singleton instance
     public static SoundManager Instance;
 
@@ -11,23 +14,30 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] humanStepSounds; // Array for multiple step sounds
     public AudioClip humanDamageSound;
     public AudioClip deathSound;
+    
 
     [Header("Monster Sounds")]
     public AudioClip[] monsterStepSounds; // Array for multiple step sounds
     public AudioClip monsterDamageSound;
     public AudioClip monsterDeathSound;
+    
 
     [Header("Background Music")]
     public AudioClip backgroundMusic;
+    
 
     [Header("Weapon Sounds")]
     public AudioClip gunShotSound;
+    
 
     [Header("Misc")]
     public AudioClip helmetSound;
     public AudioClip overHeat;
     public AudioClip collectibleSound;
     public AudioClip doorSound;
+    public AudioClip EquipPickupsound;
+    public AudioClip MainMenuMusic;
+
 
     private AudioSource audioSource;
     private Dictionary<string, AudioSource> backgroundSources = new Dictionary<string, AudioSource>();
@@ -94,8 +104,11 @@ public class SoundManager : MonoBehaviour
             {
                 bgMusicSource.Play();
             }
+
         }
     }
+
+
 
     public void StopBackgroundMusic()
     {
@@ -168,6 +181,14 @@ public class SoundManager : MonoBehaviour
         PlaySound(doorSound);
     }
 
+    public void PlayEquipPickupSound()
+    {
+        PlaySound(EquipPickupsound);
+    }
 
+    public void PlayMainMenuMusic()
+    {
+        PlaySound(MainMenuMusic);
+    }
 
 }

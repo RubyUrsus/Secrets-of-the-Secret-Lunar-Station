@@ -13,7 +13,7 @@ TagManager:
   - Weapon
   - Checkpoint
   - PowerUp
-  - Start
+  - PuzzleDoorTrigger
   layers:
   - Default
   - TransparentFX

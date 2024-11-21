@@ -19,7 +19,11 @@ public class Room01CloseDoorOnEnterRoom2 : MonoBehaviour
     {
         if (other.gameObject == Camera.main.transform.root.gameObject)
         {
-            doorToClose.Interact();
+            if (doorToClose.Open)
+            {
+                doorToClose.Interact();
+            }
+            
             if (resetUndo)
             {
                 undoMovement.ClearStack();
