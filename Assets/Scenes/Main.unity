@@ -504,6 +504,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: acde1e8f8bf6f1e4eb08880cbf2f6c46, type: 3}
     - target: {fileID: 4908301553681928354, guid: 41538bf20da8bc64383ff8b6ed2cca60,
         type: 3}
+      propertyPath: humanVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908301553681928354, guid: 41538bf20da8bc64383ff8b6ed2cca60,
+        type: 3}
       propertyPath: monsterDeathSound
       value: 
       objectReference: {fileID: 8300000, guid: 0ece2c436c2398e4fa3851973b113fec, type: 3}
