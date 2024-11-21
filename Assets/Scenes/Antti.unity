@@ -431,7 +431,7 @@ MonoBehaviour:
   helmetSound: {fileID: 0}
   overHeat: {fileID: 8300000, guid: 9dbfeda62bbe03a47ae4389866376081, type: 3}
   collectibleSound: {fileID: 8300000, guid: cae8e30e0bcc53447985dc938ace68e9, type: 3}
-  doorSound: {fileID: 0}
+  doorSound: {fileID: 8300000, guid: 0cee5c5258383ec41a263e9ad02c99c0, type: 3}
 --- !u!1 &660668155
 GameObject:
   m_ObjectHideFlags: 0
