@@ -416,7 +416,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6927318cf095be349afece16e883df9b, type: 3}
   - {fileID: 8300000, guid: c0534a6891aab0646930e8baa3881d86, type: 3}
   humanDamageSound: {fileID: 8300000, guid: c05cf3bd8a0053a4ca8205e6eda73c17, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: e2e34129ef1195a4799c8c96ff72f35d, type: 3}
   monsterStepSounds:
   - {fileID: 8300000, guid: 15a1e1bbb0ae0ce4cb0624caeee908bb, type: 3}
   - {fileID: 8300000, guid: 6316d3e546ca9384a9ef39fb59f1fbff, type: 3}
@@ -425,7 +425,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d4d4f3ad6099c74409ef17227b1a7021, type: 3}
   - {fileID: 8300000, guid: 40be4ead74bb97c458341aa32e1f9d19, type: 3}
   monsterDamageSound: {fileID: 8300000, guid: 22c430b88bfd9cf489af7c629efa0f22, type: 3}
-  monsterDeathSound: {fileID: 0}
+  monsterDeathSound: {fileID: 8300000, guid: 0ece2c436c2398e4fa3851973b113fec, type: 3}
   backgroundMusic: {fileID: 8300000, guid: abe69834241a6e34ea79ee07b866d34a, type: 3}
   gunShotSound: {fileID: 8300000, guid: 1b2ee9bd3865b4a4a962a5f72ab77bf6, type: 3}
   helmetSound: {fileID: 0}
