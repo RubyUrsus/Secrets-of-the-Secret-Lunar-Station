@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject menuCanvas;
     [SerializeField] Button ContinueButton;
     [SerializeField] MouseLook mouseLook;
+    SaveManager saveManager;
 
     void Start()
     {
@@ -34,6 +36,13 @@ public class PauseMenu : MonoBehaviour
         menuCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         mouseLook.enabled = true;
+    }
+
+    public void OnLoadGameButton()
+    {
+        PlayerPrefs.SetInt("LoadGame", 1);
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1;
     }
 
     IEnumerator PressDelay()
