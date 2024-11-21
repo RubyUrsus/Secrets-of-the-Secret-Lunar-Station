@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
+    // Particle effect prefab for overheat
+    public GameObject OverheatedSmoke;
+    // Particle effect prefab for hits 
+    public GameObject hitEffectPrefab;           
     // Reference to the bullet prefab
     public GameObject bulletPrefab;
+    
 
     // Point where the bullet will spawn
     public Transform firePoint;
@@ -48,6 +53,9 @@ public class ShootingScript : MonoBehaviour
 
         // Find the MouseLook script to apply recoil
         mouseLook = FindObjectOfType<MouseLook>();
+
+        camTransform = Camera.main.transform;
+
     }
 
     void Update()
@@ -66,7 +74,7 @@ public class ShootingScript : MonoBehaviour
         }
 
         // Check if the player is holding down the fire button and if it's time to shoot again
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && canShoot)
+        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && canShoot && Time.timeScale != 0)
         {
             // Update nextFireTime for fire rate and fire the shot
             nextFireTime = Time.time + 1f / fireRate;
@@ -77,8 +85,14 @@ public class ShootingScript : MonoBehaviour
             shotsFired++;
 
             // Start cooldown if 100 shots have been fired
+            
             if (shotsFired >= 100)
             {
+                GameObject OverheatedSmoke = Instantiate(this.OverheatedSmoke, firePoint.position, firePoint.rotation);
+                OverheatedSmoke.transform.SetParent(firePoint, false);
+                OverheatedSmoke.transform.position = firePoint.position;
+                OverheatedSmoke.transform.rotation = firePoint.rotation;    
+                SoundManager.Instance.PlayOverHeatSound();
                 canShoot = false;
                 cooldownStartTime = Time.time; // Start the cooldown timer
             }
@@ -97,6 +111,7 @@ public class ShootingScript : MonoBehaviour
 
     void Shoot()
     {
+        SoundManager.Instance.PlayGunShotSound();
         // Instantiate the bullet at the fire point
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Vector3 direction = firePoint.forward;
@@ -111,9 +126,18 @@ public class ShootingScript : MonoBehaviour
             {
                 // Apply damage to the enemy
                 enemy.TakeDamage(1, hitInfo.point, direction); // Using the impact overload to apply force
+
+                // Instantiate particle effect at the point of impact
+                if (hitEffectPrefab != null)
+                {
+                    Instantiate(hitEffectPrefab, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                    Debug.Log("Instantiate osuma");
+                }
+
             }
 
-
+            // Debug visualization
+            Debug.DrawRay(firePoint.position, direction * hitInfo.distance, Color.green, 1.0f);
 
         }
 
@@ -122,7 +146,7 @@ public class ShootingScript : MonoBehaviour
         {
             rb.velocity = firePoint.forward * bulletSpeed;
             // Optional: Destroy bullet after 1 second to prevent memory overload
-            Destroy(bullet, 0.2f);
+            Destroy(bullet, 0.1f);
         }
         
     }

@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] GameObject MenuCanvas;
+    [SerializeField] GameObject menuCanvas;
+    [SerializeField] Button ContinueButton;
+    [SerializeField] MouseLook mouseLook;
+    SaveManager saveManager;
 
     void Start()
     {
-        MenuCanvas.SetActive(false);
+        ContinueButton.onClick.AddListener(OnContinueButton);
     }
 
     void Update()
@@ -19,7 +24,31 @@ public class PauseMenu : MonoBehaviour
     public void ToPauseMenu()
     {
         Time.timeScale = 0;
-        MenuCanvas.SetActive(true);
+        menuCanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        mouseLook.enabled = false;
+    }
+
+    public void OnContinueButton()
+    {
+        StartCoroutine(PressDelay());
+
+        menuCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        mouseLook.enabled = true;
+    }
+
+    public void OnLoadGameButton()
+    {
+        PlayerPrefs.SetInt("LoadGame", 1);
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1;
+    }
+
+    IEnumerator PressDelay()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        Time.timeScale = 1;
     }
 }

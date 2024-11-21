@@ -1,13 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject menuCanvas;
-    public void OnPlayButton()
+
+    public void OnNewGameButton()
     {
+        PlayerPrefs.SetInt("LoadGame", 0);
+        SceneManager.LoadScene(2);
+    }
+
+    public void OnLoadGameButton()
+    {
+        PlayerPrefs.SetInt("LoadGame", 1);
         SceneManager.LoadScene(2);
     }
 
@@ -16,10 +24,4 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnContinueButton()
-    {
-        menuCanvas.SetActive(false);
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
 }

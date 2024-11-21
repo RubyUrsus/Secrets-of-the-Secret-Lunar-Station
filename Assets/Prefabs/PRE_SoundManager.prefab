@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &535819509841021875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019038239658467129}
+  - component: {fileID: 4908301553681928354}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1019038239658467129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535819509841021875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1970848820521307119}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4908301553681928354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535819509841021875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8da5ddf739714249a84124719ccd050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  humanStepSounds:
+  - {fileID: 8300000, guid: 1de2ad0367392ec42adcbc7957f36483, type: 3}
+  - {fileID: 8300000, guid: d63929cd76dfb7c4bbfdf690a7f877a1, type: 3}
+  - {fileID: 8300000, guid: 0b5b628bfc5250e4583d6b20f59e8522, type: 3}
+  - {fileID: 8300000, guid: f3bf2ac051adc584681b1c7a95c6437b, type: 3}
+  - {fileID: 8300000, guid: 6927318cf095be349afece16e883df9b, type: 3}
+  - {fileID: 8300000, guid: c0534a6891aab0646930e8baa3881d86, type: 3}
+  humanDamageSound: {fileID: 8300000, guid: c05cf3bd8a0053a4ca8205e6eda73c17, type: 3}
+  deathSound: {fileID: 0}
+  monsterStepSounds:
+  - {fileID: 8300000, guid: 15a1e1bbb0ae0ce4cb0624caeee908bb, type: 3}
+  - {fileID: 8300000, guid: 6316d3e546ca9384a9ef39fb59f1fbff, type: 3}
+  - {fileID: 8300000, guid: a20222cc1327ec449b460441c478a641, type: 3}
+  - {fileID: 8300000, guid: 0473ab333cb105e4aa780eaeea0238e4, type: 3}
+  - {fileID: 8300000, guid: d4d4f3ad6099c74409ef17227b1a7021, type: 3}
+  - {fileID: 8300000, guid: 40be4ead74bb97c458341aa32e1f9d19, type: 3}
+  monsterDamageSound: {fileID: 8300000, guid: 22c430b88bfd9cf489af7c629efa0f22, type: 3}
+  monsterDeathSound: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: abe69834241a6e34ea79ee07b866d34a, type: 3}
+  gunShotSound: {fileID: 8300000, guid: 1b2ee9bd3865b4a4a962a5f72ab77bf6, type: 3}
+  helmetSound: {fileID: 0}
+  overHeat: {fileID: 8300000, guid: 9dbfeda62bbe03a47ae4389866376081, type: 3}
+  collectibleSound: {fileID: 8300000, guid: cae8e30e0bcc53447985dc938ace68e9, type: 3}
+  doorSound: {fileID: 0}
+--- !u!1 &6953916258340342246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1970848820521307119}
+  m_Layer: 0
+  m_Name: PRE_SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1970848820521307119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6953916258340342246}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 57.01632, y: 5.5140276, z: 106.1152}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1019038239658467129}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

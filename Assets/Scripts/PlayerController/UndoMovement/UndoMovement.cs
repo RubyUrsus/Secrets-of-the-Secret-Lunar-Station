@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 using Unity.VisualScripting;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class UndoMovement : MonoBehaviour
+public class UndoMovement : MonoBehaviour, IOnInventoryChange
 {
     private List<IOnUndoChargesChange> iOnUndoChargesChange = new List<IOnUndoChargesChange>();
     Stack<Vector3> undoStack = new Stack<Vector3>();
@@ -17,12 +17,21 @@ public class UndoMovement : MonoBehaviour
     Vector3 lastUndo;
     [SerializeField]
     int undoCharges = 1;
+    public int UndoCharges { get { return undoCharges; } set { undoCharges = value; SetObserverCharges(value, false); } }
     bool undoUsed;
     [SerializeField]
     Vector3 startPos;
 
     UndoIndicator undoInd;
+    [SerializeField] bool hasUndo;
+    Inventory inventory;
 
+
+    private void Awake()
+    {
+        inventory = FindObjectOfType<Inventory>();
+        inventory.AddInventoryListener(this);
+    }
 
     private void Start()
     {
@@ -54,8 +63,9 @@ public class UndoMovement : MonoBehaviour
 
         Debug.DrawRay(undoStack.Peek(), Vector3.up, Color.yellow);
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && hasUndo)
         {
+            Debug.Log("Undo kutsuttiin");
             if (undoStack.Count > 1 && undoCharges > 0 && Vector3.Distance(transform.position, undoStack.Peek()) > (undoDistance / 2))
             {
                 UndoLastMovement();
@@ -69,7 +79,8 @@ public class UndoMovement : MonoBehaviour
             else if (undoStack.Count <= 1) Debug.Log("No positions available!");
             else if (undoCharges <= 0) Debug.Log("Not enough charges");
         }
-             
+
+        // MUISTA POISTAA ENNEN BUILDAUSTA!!!!     
         if (Input.GetKeyDown(KeyCode.Return)) AddUndoCharge();
     }
 
@@ -124,6 +135,10 @@ public class UndoMovement : MonoBehaviour
         undoStack.Push(startPos);
     }
 
+    public void PushCurrent()
+    {
+        undoStack.Push(transform.position);
+    }
 
     public void OnUndoPickUp()
     {
@@ -134,4 +149,18 @@ public class UndoMovement : MonoBehaviour
 
     }
 
+    public void OnInventoryChange(Inventory inventory)
+    {
+        hasUndo = inventory.HasUndo;
+    }
+
+    private void OnEnable()
+    {
+        inventory.AddInventoryListener(this);
+    }
+
+    private void OnDisable()
+    {
+        inventory.RemoveInventoryListener(this);
+    }
 }

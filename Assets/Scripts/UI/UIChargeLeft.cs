@@ -17,8 +17,6 @@ public class UIChargeLeft : MonoBehaviour, IOnUndoChargesChange
         undoMovement = FindObjectOfType<UndoMovement>();
         undoMovement.AddUndoMovementListener(this);
     }
-
-
     public void OnUndoChargesChange(int charges, bool undoUsed)
     {
         chargesLeft = charges;

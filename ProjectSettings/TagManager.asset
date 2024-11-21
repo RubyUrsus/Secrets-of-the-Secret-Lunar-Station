@@ -7,6 +7,13 @@ TagManager:
   - UndoChargesUI
   - Bullet
   - Enemy
+  - HelmetUI
+  - Damage
+  - DoorTrigger
+  - Weapon
+  - Checkpoint
+  - PowerUp
+  - PuzzleDoorTrigger
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class Door01Controller : MonoBehaviour    /* , IInteractable*/
     public float smoothTime = 0.2f;   // Aika, jonka vetolaatikon liike kest‰‰
     [SerializeField]
     private bool open = false;      // Tarkistus, onko vetolaatikko auki vai kiinni
+    public bool Open => open;
 
 
     private void Start()
@@ -41,12 +42,14 @@ public class Door01Controller : MonoBehaviour    /* , IInteractable*/
             StartCoroutine(OpenDoubleDoor(openPositionX));
             //FindObjectOfType<AudioManager>().Play("OpenDrawer"); // Valmius ‰‰niin
             open = true;
+            SoundManager.Instance.PlayDoorSound();
         }
         else
         {
             StartCoroutine(OpenDoubleDoor(closedPositionX));
             //FindObjectOfType<AudioManager>().Play("CloseDrawer"); // Valmius ‰‰niin
             open = false;
+            SoundManager.Instance.PlayDoorSound();
         }
     }
 
