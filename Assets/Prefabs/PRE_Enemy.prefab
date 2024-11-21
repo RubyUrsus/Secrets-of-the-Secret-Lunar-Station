@@ -55,7 +55,7 @@ MonoBehaviour:
   player: {fileID: 0}
   timer: 0
   damage: 1
-  maxAttackCoolDown: 20
+  maxAttackCoolDown: 5
   attackCoolDown: 12.5
 --- !u!114 &3441393847420878377
 MonoBehaviour:

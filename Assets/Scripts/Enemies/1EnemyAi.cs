@@ -29,7 +29,7 @@ public class NewBehaviour : MonoBehaviour
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         enemyhealth = GetComponent<EnemyHealth>();
-        attackCoolDown = maxAttackCoolDown;
+        attackCoolDown = 0;
 
         animator = GetComponentInChildren<Animator>();
         calculateVelocity = GetComponent<CalculateVelocity>();
