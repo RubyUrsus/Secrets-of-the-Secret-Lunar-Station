@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishGame : MonoBehaviour, IInteractable
 {
@@ -9,7 +10,7 @@ public class FinishGame : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        // Tähän Main menu kutsuminen
+        SceneManager.LoadScene(0);
     }
 
 }
