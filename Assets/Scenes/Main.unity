@@ -323,6 +323,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4908301553681928354, guid: 41538bf20da8bc64383ff8b6ed2cca60,
+        type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cee5c5258383ec41a263e9ad02c99c0, type: 3}
+    - target: {fileID: 4908301553681928354, guid: 41538bf20da8bc64383ff8b6ed2cca60,
+        type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e2e34129ef1195a4799c8c96ff72f35d, type: 3}
+    - target: {fileID: 4908301553681928354, guid: 41538bf20da8bc64383ff8b6ed2cca60,
+        type: 3}
+      propertyPath: helmetSound
+      value: 
+      objectReference: {fileID: 8300000, guid: acde1e8f8bf6f1e4eb08880cbf2f6c46, type: 3}
+    - target: {fileID: 4908301553681928354, guid: 41538bf20da8bc64383ff8b6ed2cca60,
+        type: 3}
+      propertyPath: monsterDeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ece2c436c2398e4fa3851973b113fec, type: 3}
     - target: {fileID: 6953916258340342246, guid: 41538bf20da8bc64383ff8b6ed2cca60,
         type: 3}
       propertyPath: m_Name

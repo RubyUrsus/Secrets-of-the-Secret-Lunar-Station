@@ -37,19 +37,19 @@ public class Door01Controller : MonoBehaviour    /* , IInteractable*/
     // Valmius interact-systeemille
     public void Interact()
     {
+        SoundManager.Instance.PlayDoorSound();
         if (open == false)
         {
             StartCoroutine(OpenDoubleDoor(openPositionX));
             //FindObjectOfType<AudioManager>().Play("OpenDrawer"); // Valmius ‰‰niin
             open = true;
-            SoundManager.Instance.PlayDoorSound();
+            
         }
         else
         {
             StartCoroutine(OpenDoubleDoor(closedPositionX));
             //FindObjectOfType<AudioManager>().Play("CloseDrawer"); // Valmius ‰‰niin
             open = false;
-            SoundManager.Instance.PlayDoorSound();
         }
     }
 
