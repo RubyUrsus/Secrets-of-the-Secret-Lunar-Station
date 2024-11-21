@@ -496,6 +496,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_Smoke
       objectReference: {fileID: 0}
+    - target: {fileID: 1804931119129196535, guid: e962de1ead1239c448e395438e5ff640,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6643886381497120720, guid: e962de1ead1239c448e395438e5ff640,
         type: 3}
       propertyPath: m_LocalScale.x
