@@ -20,6 +20,8 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
     private Inventory inventory;
     Image undoIcon;
 
+    float defaultVignetteIntensity = 0.392f;
+
 
     void Awake()
     {
@@ -36,7 +38,7 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
         if (volume != null && volume.profile.TryGet(out vignette))
         {
             vignette.intensity.overrideState = true;  // Varmista, ett‰ intensiteetti on s‰‰dett‰viss‰
-            vignette.intensity.value = 0f;            // Aloitusarvoksi 0
+            vignette.intensity.value = defaultVignetteIntensity;            // Aloitusarvoksi 0
         }
         else
         {
@@ -61,7 +63,7 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
         while (elapsedTime < flashDuration)
         {
             undoIcon.fillAmount = Mathf.Lerp(1, 0, elapsedTime / flashDuration);
-            vignette.intensity.value = Mathf.Lerp(maxIntensity, 0, elapsedTime / flashDuration);
+            vignette.intensity.value = Mathf.Lerp(maxIntensity, defaultVignetteIntensity, elapsedTime / flashDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -69,7 +71,7 @@ public class UndoIndicator : MonoBehaviour, IOnUndoChargesChange
 
         undoIcon.fillAmount = 1;
         // Varmistaa, ett‰ intensiteetti palautuu nollaan
-        vignette.intensity.value = 0;
+        vignette.intensity.value = defaultVignetteIntensity;
     }
 
 
