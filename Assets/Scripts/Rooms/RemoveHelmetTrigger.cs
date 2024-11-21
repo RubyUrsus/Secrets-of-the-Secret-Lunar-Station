@@ -26,6 +26,7 @@ public class RemoveHelmetTrigger : MonoBehaviour
     {
         if (other.gameObject == Camera.main.transform.root.gameObject && helmetSpawned == false)
         {
+            SoundManager.Instance.PlayHelmetSound();
             inventory.SethelmetBool();
             GameObject go = Instantiate(helmetPrefab, other.transform.position + Vector3.up * 2, transform.rotation);
             StartCoroutine(MoveToPosition(go, targetPosition.position));

@@ -19,6 +19,7 @@ public class PickUpHelmet : MonoBehaviour, IInteractable
         doorController.Interact();
         inventory.SethelmetBool();
         Destroy(gameObject);
+        SoundManager.Instance.PlayHelmetSound();
     }
 
 }
