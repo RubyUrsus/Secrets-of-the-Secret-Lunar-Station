@@ -26,9 +26,11 @@ public class SetUndoMovementActive : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        SoundManager.Instance.PlayEquipPickupSound();
         inventory.SetUndoBool();
         undoMovement.OnUndoPickUp();
         gameObject.SetActive(false);
         undoTutorialText.SetActive(true);
+
     }
 }
