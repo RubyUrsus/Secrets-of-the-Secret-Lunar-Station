@@ -428,7 +428,7 @@ MonoBehaviour:
   monsterDeathSound: {fileID: 8300000, guid: 0ece2c436c2398e4fa3851973b113fec, type: 3}
   backgroundMusic: {fileID: 8300000, guid: abe69834241a6e34ea79ee07b866d34a, type: 3}
   gunShotSound: {fileID: 8300000, guid: 1b2ee9bd3865b4a4a962a5f72ab77bf6, type: 3}
-  helmetSound: {fileID: 0}
+  helmetSound: {fileID: 8300000, guid: acde1e8f8bf6f1e4eb08880cbf2f6c46, type: 3}
   overHeat: {fileID: 8300000, guid: 9dbfeda62bbe03a47ae4389866376081, type: 3}
   collectibleSound: {fileID: 8300000, guid: cae8e30e0bcc53447985dc938ace68e9, type: 3}
   doorSound: {fileID: 8300000, guid: 0cee5c5258383ec41a263e9ad02c99c0, type: 3}
