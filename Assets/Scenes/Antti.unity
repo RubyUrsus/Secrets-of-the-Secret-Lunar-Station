@@ -417,6 +417,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c0534a6891aab0646930e8baa3881d86, type: 3}
   humanDamageSound: {fileID: 8300000, guid: c05cf3bd8a0053a4ca8205e6eda73c17, type: 3}
   deathSound: {fileID: 8300000, guid: e2e34129ef1195a4799c8c96ff72f35d, type: 3}
+  humanVolume: 1
   monsterStepSounds:
   - {fileID: 8300000, guid: 15a1e1bbb0ae0ce4cb0624caeee908bb, type: 3}
   - {fileID: 8300000, guid: 6316d3e546ca9384a9ef39fb59f1fbff, type: 3}
@@ -426,12 +427,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 40be4ead74bb97c458341aa32e1f9d19, type: 3}
   monsterDamageSound: {fileID: 8300000, guid: 22c430b88bfd9cf489af7c629efa0f22, type: 3}
   monsterDeathSound: {fileID: 8300000, guid: 0ece2c436c2398e4fa3851973b113fec, type: 3}
+  monsterVolume: 1
   backgroundMusic: {fileID: 8300000, guid: abe69834241a6e34ea79ee07b866d34a, type: 3}
+  backgroundVolume: 1
   gunShotSound: {fileID: 8300000, guid: 1b2ee9bd3865b4a4a962a5f72ab77bf6, type: 3}
+  weaponVolume: 1
   helmetSound: {fileID: 8300000, guid: acde1e8f8bf6f1e4eb08880cbf2f6c46, type: 3}
   overHeat: {fileID: 8300000, guid: 9dbfeda62bbe03a47ae4389866376081, type: 3}
   collectibleSound: {fileID: 8300000, guid: cae8e30e0bcc53447985dc938ace68e9, type: 3}
   doorSound: {fileID: 8300000, guid: 0cee5c5258383ec41a263e9ad02c99c0, type: 3}
+  EquipPickupsound: {fileID: 8300000, guid: eda10eb0f01bf8b4b8f9067729b7b005, type: 3}
+  MainMenuMusic: {fileID: 8300000, guid: 6c139b2211c6c56479e3704f51e2980b, type: 3}
+  miscVolume: 1
 --- !u!1 &660668155
 GameObject:
   m_ObjectHideFlags: 0
