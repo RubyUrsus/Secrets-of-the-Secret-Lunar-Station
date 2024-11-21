@@ -11,12 +11,14 @@ public class Menu : MonoBehaviour
     {
         PlayerPrefs.SetInt("LoadGame", 0);
         SceneManager.LoadScene(2);
+        Time.timeScale = 1;
     }
 
     public void OnLoadGameButton()
     {
         PlayerPrefs.SetInt("LoadGame", 1);
         SceneManager.LoadScene(2);
+        Time.timeScale = 1;
     }
 
     public void OnQuitButton()
