@@ -10,6 +10,10 @@ public class Enemy : MonoBehaviour
     float health = 5;
     Animator animator;
     NewBehaviour enemyAI;
+    [SerializeField]
+    Collider colliderOne;
+    [SerializeField]
+    Collider colliderTwo;
 
 
     Rigidbody rb;
@@ -18,6 +22,8 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         enemyAI = GetComponentInChildren<NewBehaviour>();
+        colliderOne.enabled = true;
+        colliderTwo.enabled = true;
     }
     public void TakeDamage(float damage)
     {
@@ -27,6 +33,8 @@ public class Enemy : MonoBehaviour
         {
             if (animator != null)
             {
+                colliderOne.enabled = false;
+                colliderTwo.enabled = false;
                 animator.SetTrigger("IsStopped");
                 Destroy(gameObject, 5);
                 enemyAI.enabled = false;
