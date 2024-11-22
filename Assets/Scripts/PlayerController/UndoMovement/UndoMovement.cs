@@ -80,8 +80,6 @@ public class UndoMovement : MonoBehaviour, IOnInventoryChange
             else if (undoCharges <= 0) Debug.Log("Not enough charges");
         }
 
-        // MUISTA POISTAA ENNEN BUILDAUSTA!!!!     
-        if (Input.GetKeyDown(KeyCode.Return)) AddUndoCharge();
     }
 
     void UndoLastMovement()
