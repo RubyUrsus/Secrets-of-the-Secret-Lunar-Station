@@ -268,6 +268,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 233024279994710836, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 884327299868132515, guid: 90b39fdf5af363a4399c2fc479c387fb,
         type: 3}
       propertyPath: m_Name
@@ -278,11 +283,47 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1070898763759716538, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_Name
+      value: MainMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605721871595960575, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 034dd3411a7f90042853f2821cd44f7a,
+        type: 3}
     - target: {fileID: 1605721871595960575, guid: 90b39fdf5af363a4399c2fc479c387fb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 425767498}
+    - target: {fileID: 1742708452793936415, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257014878183965089, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342246386126939804, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697359829722391079, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 425767498}
+    - target: {fileID: 3482113702716487143, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_text
+      value: Main Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 4010353821315065646, guid: 90b39fdf5af363a4399c2fc479c387fb,
         type: 3}
       propertyPath: m_Pivot.x
@@ -388,11 +429,44 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 425767498}
-    m_RemovedComponents: []
+    - target: {fileID: 6544724499401901382, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_Name
+      value: MainMenuText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155145413609164485, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155145413609164485, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155145413609164485, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1638543866}
+    m_RemovedComponents:
+    - {fileID: 7170106555833750647, guid: 90b39fdf5af363a4399c2fc479c387fb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b39fdf5af363a4399c2fc479c387fb, type: 3}
+--- !u!114 &119753630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8155145413609164485, guid: 90b39fdf5af363a4399c2fc479c387fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 108264245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &171009315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -963,6 +1037,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PRE_DeathScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511210618219617968, guid: 18d4997f8f26dbb489094c29215c0384,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2666094712563653704, guid: 18d4997f8f26dbb489094c29215c0384,
         type: 3}
@@ -1655,6 +1734,11 @@ PrefabInstance:
       propertyPath: hasHelmet
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7737798503594865630, guid: 4bcfbd814e1e8274ca41492bc7286591,
+        type: 3}
+      propertyPath: sensitivitySlider
+      value: 
+      objectReference: {fileID: 119753630}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

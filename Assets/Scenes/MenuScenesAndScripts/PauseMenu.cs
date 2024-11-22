@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject menuCanvas;
     [SerializeField] Button ContinueButton;
     [SerializeField] MouseLook mouseLook;
-    SaveManager saveManager;
+
 
     void Start()
     {
@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         menuCanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         mouseLook.enabled = false;
     }
 
@@ -33,16 +34,22 @@ public class PauseMenu : MonoBehaviour
     {
         StartCoroutine(PressDelay());
 
-        menuCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         mouseLook.enabled = true;
+        menuCanvas.SetActive(false);
     }
 
     public void OnLoadGameButton()
     {
         PlayerPrefs.SetInt("LoadGame", 1);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         Time.timeScale = 1;
+    }
+
+    public void OnMainMenuButton()
+    {
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator PressDelay()

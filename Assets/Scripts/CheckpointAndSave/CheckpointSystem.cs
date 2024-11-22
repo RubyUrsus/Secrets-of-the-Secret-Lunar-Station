@@ -24,24 +24,19 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Update()
     {
-        if (hitCheckpoint)
-        {
-            timer += Time.deltaTime;
-        }
+        if (hitCheckpoint) timer += Time.deltaTime;
 
         if (timer > 2)
         {
             checkpointText.SetActive(false);
             timer = 0;
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Checkpoint")
         {
-            Debug.Log("checkpoint");
             continuePos = transform.position;
             saveManager.Save();
             hitCheckpoint = true;
