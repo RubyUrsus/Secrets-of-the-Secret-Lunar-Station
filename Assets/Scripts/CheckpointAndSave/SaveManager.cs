@@ -36,15 +36,8 @@ public class SaveManager : MonoBehaviour
         if (PlayerPrefs.GetInt("LoadGame") != 0) Load();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O)) Save();
-        if (Input.GetKeyDown(KeyCode.P)) Load();
-    }
-
     public void Save()
     {
-        Debug.Log("Saved");
         SaveData data = new SaveData();
         data.playerPos = checkpointSystem.ContinuePos;
         data.playerRotation = transform.rotation;
@@ -60,7 +53,6 @@ public class SaveManager : MonoBehaviour
 
     public void Load()
     {
-        Debug.Log("Loaded");
         string savedData = File.ReadAllText(Application.persistentDataPath + "/saveData.json");
         SaveData data = new SaveData();
         JsonUtility.FromJsonOverwrite(savedData, data);

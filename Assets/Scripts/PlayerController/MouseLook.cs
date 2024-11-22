@@ -2,22 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
     [SerializeField]
     Transform camTransform;
-    [SerializeField]
-    float mouseSens = 1f;
+    //[SerializeField]
+    private float mouseSens = 1f;
     float mouseY;
+
+    [SerializeField] Slider sensitivitySlider;
 
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if(PlayerPrefs.HasKey("MouseSensitivity"))
+        {
+            mouseSens = PlayerPrefs.GetFloat("MouseSensitivity", 1);
+            sensitivitySlider.value = mouseSens;
+        }
+        else
+        {
+            mouseSens = 1;
+        }
     }
-    // Update is called once per frame
+
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSens;
@@ -26,11 +39,6 @@ public class MouseLook : MonoBehaviour
         mouseY -= Input.GetAxis("Mouse Y") * mouseSens;
         mouseY = Mathf.Clamp(mouseY, -90, 90);
         camTransform.localRotation = Quaternion.Euler(mouseY, 0, 0);
-        
-        
-            
-            
-        
     }
 
     public void ApplyRecoil()
@@ -38,6 +46,12 @@ public class MouseLook : MonoBehaviour
         mouseY -= Random.Range(0.4f, 1.5f);
         float mouseX = Random.Range(-1, 1);
         transform.Rotate(0, mouseX, 0);
+    }
+
+    public void OnSliderMovement(float value)
+    {
+        mouseSens = value;
+        PlayerPrefs.SetFloat("MouseSensitivity", mouseSens);
     }
 
     //void ApplyRecoil()
