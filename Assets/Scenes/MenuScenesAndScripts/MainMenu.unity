@@ -305,8 +305,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325848048311741727, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
+      propertyPath: m_text
+      value: "Sofia, t4oxia: 2D & 3D artist / Graphic designer, enemy design, enemy
+        animations\r\n\nEthan \"Chickenpal\" Rouvali: 2D and 3D artist / Graphic
+        designer, Player design, Gameplay UI, Puzzle room design, 3D modeling\n \r\nJoonK0:
+        3D artist / Visual desing and modeling of levels, particle effects, 3D modeling
+        \r\n\nAntti ''PewCaro'' P\xE4tsi: Code / Weapon logics, weapon effects, sound
+        effects, sound management, post processing, soundtrack\r\n\nFinne0ne: code
+        / Enemy behavior,  Enemy Spawner,  putting Enemy Animations in game\r\n\nJesse
+        \"Nerb\" Kortelainen: code / UI functionality, save and checkpoint mechanics,
+        puzzle design\n\nReko Ulmonen: Code / team lead, level design, gameplay logics\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325848048311741727, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 3325848048311741727, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
@@ -317,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 3325848048311741727, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 40
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 3325848048311741727, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
@@ -325,6 +338,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -6645211961483103408, guid: c57461257af1b9243bc8a9ea4a491172,
         type: 2}
+    - target: {fileID: 3325848048311741727, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325848048311741727, guid: d8425ed149e47e043a030b0f48dd67fd,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3325848048311741727, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -570,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 6594110286152107823, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 69
+      value: -35.48
       objectReference: {fileID: 0}
     - target: {fileID: 6646228914088455007, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
@@ -697,17 +720,17 @@ PrefabInstance:
     - target: {fileID: 7297726839457017034, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1541.4463
+      value: 1744.4
       objectReference: {fileID: 0}
     - target: {fileID: 7297726839457017034, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 732.8624
+      value: 744
       objectReference: {fileID: 0}
     - target: {fileID: 7297726839457017034, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 129
+      value: -43
       objectReference: {fileID: 0}
     - target: {fileID: 7604314906545071636, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
@@ -861,7 +884,7 @@ PrefabInstance:
     - target: {fileID: 7865374625297694712, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_fontSize
-      value: 80
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7865374625297694712, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
@@ -872,7 +895,7 @@ PrefabInstance:
     - target: {fileID: 7865374625297694712, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 80
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7865374625297694712, guid: d8425ed149e47e043a030b0f48dd67fd,
         type: 3}

@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.27529716, g: 0.5692387, b: 0.5692387, a: 1}
+  m_AmbientSkyColor: {r: 0.4619081, g: 0.6528301, b: 0.6528301, a: 1}
   m_AmbientEquatorColor: {r: 0.08338136, g: 0.48447123, b: 0.74901956, a: 1}
   m_AmbientGroundColor: {r: 4.594794, g: 0.84197795, b: 0, a: 1}
   m_AmbientIntensity: 8
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 444cfc04aa5577547903d5277bf80be3, type: 2}
   m_HaloStrength: 0.5
@@ -2223,6 +2223,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnContinueButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1742708452793936415, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2697359829722391079, guid: 90b39fdf5af363a4399c2fc479c387fb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2232,6 +2237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnQuitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215865280038020060, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4010353821315065646, guid: 90b39fdf5af363a4399c2fc479c387fb,
         type: 3}
@@ -2333,6 +2343,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4280368489533124080, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1989.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280368489533124080, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 744
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280368489533124080, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50.42
+      objectReference: {fileID: 0}
     - target: {fileID: 4554927876234209658, guid: 90b39fdf5af363a4399c2fc479c387fb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2342,6 +2367,39 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnLoadGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072595398302297125, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_text
+      value: "Sofia, t4oxia: 2D & 3D artist / Graphic designer, enemy design, enemy
+        animations\r\n\nEthan \"Chickenpal\" Rouvali: 2D and 3D artist / Graphic
+        designer, Player design, Gameplay UI, Puzzle room design, 3D modeling\n \r\nJoonK0:
+        3D artist / Visual desing and modeling of levels, particle effects, 3D modeling
+        \r\n\nAntti ''PewCaro'' P\xE4tsi: Code / Weapon logics, weapon effects, sound
+        effects, sound management, post processing, soundtrack\r\n\nFinne0ne: code
+        / Enemy behavior,  Enemy Spawner,  putting Enemy Animations in game\r\n\nJesse
+        \"Nerb\" Kortelainen: code / UI functionality, save and checkpoint mechanics,
+        puzzle design\n\nReko Ulmonen: Code / team lead, level design, gameplay logics\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072595398302297125, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072595398302297125, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072595398302297125, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072595398302297125, guid: 90b39fdf5af363a4399c2fc479c387fb,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8155145413609164485, guid: 90b39fdf5af363a4399c2fc479c387fb,
         type: 3}
@@ -2746,6 +2804,11 @@ PrefabInstance:
       propertyPath: sensitivitySlider
       value: 
       objectReference: {fileID: 1845041277}
+    - target: {fileID: 8756098960136937654, guid: 4bcfbd814e1e8274ca41492bc7286591,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
