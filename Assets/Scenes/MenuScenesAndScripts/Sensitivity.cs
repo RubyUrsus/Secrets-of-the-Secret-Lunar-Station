@@ -1,25 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Sensitivity : MonoBehaviour
 {
+    [SerializeField] Slider sensitivitySlider;
 
-    
-    [SerializeField] MouseLook mouseLook;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        if (PlayerPrefs.HasKey("MouseSensitivity"))
+        {
 
+            float mouseSens = PlayerPrefs.GetFloat("MouseSensitivity", 1);
+            sensitivitySlider.value = mouseSens;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnSliderMovement(float value)
     {
-        
+        PlayerPrefs.SetFloat("MouseSensitivity", value);
     }
-
-
 }

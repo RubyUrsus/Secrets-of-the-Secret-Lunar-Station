@@ -34,16 +34,16 @@ public class PauseMenu : MonoBehaviour
     {
         StartCoroutine(PressDelay());
 
-        menuCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         mouseLook.enabled = true;
+        menuCanvas.SetActive(false);
     }
 
     public void OnLoadGameButton()
     {
         PlayerPrefs.SetInt("LoadGame", 1);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         Time.timeScale = 1;
     }
 

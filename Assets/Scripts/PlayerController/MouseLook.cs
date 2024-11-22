@@ -10,7 +10,6 @@ public class MouseLook : MonoBehaviour
     Transform camTransform;
     //[SerializeField]
     private float mouseSens = 1f;
-    public float MouseSens { get { return mouseSens; } set { mouseSens = value; } }
     float mouseY;
 
     [SerializeField] Slider sensitivitySlider;
@@ -21,9 +20,15 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        mouseSens = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
-        sensitivitySlider.value = mouseSens;
-
+        if(PlayerPrefs.HasKey("MouseSensitivity"))
+        {
+            mouseSens = PlayerPrefs.GetFloat("MouseSensitivity", 1);
+            sensitivitySlider.value = mouseSens;
+        }
+        else
+        {
+            mouseSens = 1;
+        }
     }
 
     void Update()
