@@ -11,6 +11,8 @@ public class FinishGame : MonoBehaviour, IInteractable
     public void Interact()
     {
         SceneManager.LoadScene(0);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 }

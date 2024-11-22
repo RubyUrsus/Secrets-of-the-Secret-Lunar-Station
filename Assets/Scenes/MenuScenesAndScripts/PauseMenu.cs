@@ -43,7 +43,7 @@ public class PauseMenu : MonoBehaviour
     public void OnLoadGameButton()
     {
         PlayerPrefs.SetInt("LoadGame", 1);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
 
