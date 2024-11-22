@@ -21,8 +21,8 @@ TagManager:
   - BulletLayer
   - Water
   - UI
-  - 
-  - 
+  - PlayerLayer
+  - Weapon
   - 
   - 
   - 
