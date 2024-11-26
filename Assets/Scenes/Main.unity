@@ -1352,6 +1352,31 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 104.36
       objectReference: {fileID: 0}
+    - target: {fileID: 116410503918099473, guid: df2030439ea7ef049830706047b03d32,
+        type: 3}
+      propertyPath: enemySpawners.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 116410503918099473, guid: df2030439ea7ef049830706047b03d32,
+        type: 3}
+      propertyPath: enemySpawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 1167942295}
+    - target: {fileID: 116410503918099473, guid: df2030439ea7ef049830706047b03d32,
+        type: 3}
+      propertyPath: enemySpawners.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 116410503918099473, guid: df2030439ea7ef049830706047b03d32,
+        type: 3}
+      propertyPath: enemySpawners.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 116410503918099473, guid: df2030439ea7ef049830706047b03d32,
+        type: 3}
+      propertyPath: enemySpawners.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 691681812513173943, guid: df2030439ea7ef049830706047b03d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1455,7 +1480,7 @@ PrefabInstance:
     - target: {fileID: 2134030896939824117, guid: df2030439ea7ef049830706047b03d32,
         type: 3}
       propertyPath: m_CastShadows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2626816919086217219, guid: df2030439ea7ef049830706047b03d32,
         type: 3}
@@ -1521,6 +1546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 90.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541432850099787156, guid: df2030439ea7ef049830706047b03d32,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4612657013654895493, guid: df2030439ea7ef049830706047b03d32,
         type: 3}
@@ -1683,6 +1713,12 @@ PrefabInstance:
 --- !u!4 &1167942294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 816420377364820468, guid: df2030439ea7ef049830706047b03d32,
+    type: 3}
+  m_PrefabInstance: {fileID: 1167942293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1167942295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1643189427842449486, guid: df2030439ea7ef049830706047b03d32,
     type: 3}
   m_PrefabInstance: {fileID: 1167942293}
   m_PrefabAsset: {fileID: 0}
